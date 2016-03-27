@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="E:\AndroidProjects\E-Tourism\app\build\intermediates\exploded-aar\com.github.elevenetc\textsurface\0.9.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="831e079e1943c7648a589c92a5fb5f82b080493a">
+        <dex dex="E:\AndroidProjects\E-Tourism\app\build\intermediates\pre-dexed\debug\com.github.elevenetc-textsurface-0.9.1_d8246bb1f077fd7ba13f14287ea62e3f06c150b5.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.github.PhilJay\MPAndroidChart\v2.2.3\f474798fde03291398b1a016118b9809a79550b7\MPAndroidChart-v2.2.3.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="f474798fde03291398b1a016118b9809a79550b7">
+        <dex dex="E:\AndroidProjects\E-Tourism\app\build\intermediates\pre-dexed\debug\MPAndroidChart-v2.2.3_53c7583be893c37adf4b59a2c6e0efc178b94e1e.jar" />
+    </item>
+    <item
+        jar="E:\AndroidProjects\E-Tourism\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="8c108c22c99e794eff255bb34d2a461200c4cbb0">
+        <dex dex="E:\AndroidProjects\E-Tourism\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-23.2.0_07a1904dce79feb46edd1dabbba01672198ebbd0.jar" />
+    </item>
+    <item
+        jar="E:\AndroidProjects\E-Tourism\app\build\intermediates\exploded-aar\com.android.support\design\23.1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="379471b2bd17d9737c050345c08e8c7d16589784">
+        <dex dex="E:\AndroidProjects\E-Tourism\app\build\intermediates\pre-dexed\debug\com.android.support-design-23.1.1_e57cf98fd3627d82279fb947b71b5324058bb102.jar" />
+    </item>
+    <item
+        jar="E:\AndroidProjects\E-Tourism\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="6e3578f92f7462d1a935a1d36173e3bdd1234976">
+        <dex dex="E:\AndroidProjects\E-Tourism\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-23.2.0_553960746379152f8855c12be92c6deedba81c5c.jar" />
+    </item>
+    <item
+        jar="E:\AndroidProjects\E-Tourism\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="09c5e804bc67fc0580360043dff067df574a60d4">
+        <dex dex="E:\AndroidProjects\E-Tourism\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-23.1.1_c3d458b39e1d8fd694e3ca1d8ff5b04074e61827.jar" />
+    </item>
+    <item
+        jar="E:\AndroidProjects\E-Tourism\app\build\intermediates\exploded-aar\jp.wasabeef\recyclerview-animators\2.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="8cf541e3455f0d7e1ad0f152179e4f867eee1c35">
+        <dex dex="E:\AndroidProjects\E-Tourism\app\build\intermediates\pre-dexed\debug\jp.wasabeef-recyclerview-animators-2.2.1_8fe21ea45189f86be9c03a97d876e4f935aac659.jar" />
+    </item>
+    <item
+        jar="E:\AndroidProjects\E-Tourism\app\build\intermediates\exploded-aar\com.zhy\autolayout\1.4.3\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="911eeaf6f474e74b7dbd9fa7f19aa56715a344ae">
+        <dex dex="E:\AndroidProjects\E-Tourism\app\build\intermediates\pre-dexed\debug\com.zhy-autolayout-1.4.3_68b0f366b75edfa6f7d4112445dd97836692aea0.jar" />
+    </item>
+    <item
+        jar="E:\AndroidProjects\E-Tourism\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="e5f32fa48a3eb2de0c987025c11b6e3864b634d9">
+        <dex dex="E:\AndroidProjects\E-Tourism\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.2.0_3b67e7142cbbf1a01aef34df1cc599abd04a05c6.jar" />
+    </item>
+    <item
+        jar="E:\AndroidProjects\E-Tourism\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="292a9fa091757208efa65e77eef63088247e51f3">
+        <dex dex="E:\AndroidProjects\E-Tourism\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-23.2.0_a2f975d9d338793470f9b18c3fde1cf807c6754b.jar" />
+    </item>
+    <item
+        jar="E:\AndroidProjects\E-Tourism\app\build\intermediates\exploded-aar\org.xutils\xutils\3.3.25\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="38474e88e6469389af5acb12c2fc6dd800500e41">
+        <dex dex="E:\AndroidProjects\E-Tourism\app\build\intermediates\pre-dexed\debug\org.xutils-xutils-3.3.25_93bb0f4b487d99f9c8c4c223956b0eb4b48f5cc2.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\de.greenrobot\eventbus\2.4.0\ddd166d01b3158d1c00576d29f7ed15c030df719\eventbus-2.4.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="ddd166d01b3158d1c00576d29f7ed15c030df719">
+        <dex dex="E:\AndroidProjects\E-Tourism\app\build\intermediates\pre-dexed\debug\eventbus-2.4.0_03e25c6b3178abc8ecb48b05be1f281aa0724b29.jar" />
+    </item>
+    <item
+        jar="E:\AndroidProjects\E-Tourism\app\build\intermediates\exploded-aar\com.github.jd-alexander\LikeButton\0.1.9\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="ef2428f9d0abce551abda0a8123027c9af627d09">
+        <dex dex="E:\AndroidProjects\E-Tourism\app\build\intermediates\pre-dexed\debug\com.github.jd-alexander-LikeButton-0.1.9_cfc9f6f837b844c2fbc790bd8de04b2cf7d8ebeb.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.6.2\f1bc476cc167b18e66c297df599b2377131a8947\gson-2.6.2.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="f1bc476cc167b18e66c297df599b2377131a8947">
+        <dex dex="E:\AndroidProjects\E-Tourism\app\build\intermediates\pre-dexed\debug\gson-2.6.2_002b7fbf7a0de167c934ae8280ecce1c989b18df.jar" />
+    </item>
+    <item
+        jar="E:\AndroidProjects\E-Tourism\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\23.1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="5e412e954a24c5310a459c09870e4e2081aceb03">
+        <dex dex="E:\AndroidProjects\E-Tourism\app\build\intermediates\pre-dexed\debug\com.android.support-cardview-v7-23.1.1_26911753e462648140301c42a58a6d9f0c993a89.jar" />
+    </item>
+    <item
+        jar="E:\AndroidProjects\E-Tourism\app\build\intermediates\exploded-aar\E-Tourism\cookie-library\unspecified\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="1d122c11292623fc4f59ce4dafdfcc2f80e377fa">
+        <dex dex="E:\AndroidProjects\E-Tourism\app\build\intermediates\pre-dexed\debug\E-Tourism-cookie-library-unspecified_7798176cdd625f29103165ff791a8abc185fdcc2.jar" />
+    </item>
+    <item
+        jar="E:\AndroidProjects\E-Tourism\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.0\jars\libs\internal_impl-23.2.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="6e239441500605809818997dd63b62a947195f8c">
+        <dex dex="E:\AndroidProjects\E-Tourism\app\build\intermediates\pre-dexed\debug\internal_impl-23.2.0_b6ad18bab4767c029194a3aa59d04eb447b53f1f.jar" />
+    </item>
+    <item
+        jar="D:\Users\Administrator\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.2.0\support-annotations-23.2.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="c5bf571bb10462bd90e5419ade67793f71acbc87">
+        <dex dex="E:\AndroidProjects\E-Tourism\app\build\intermediates\pre-dexed\debug\support-annotations-23.2.0_db7cc244f1c4cf4ac9672100f879fae058eedd36.jar" />
+    </item>
+
+</items>
