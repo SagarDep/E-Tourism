@@ -1,15 +1,28 @@
 package com.love_cookies.e_tourism.View.Activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.TextView;
 
+import com.love_cookies.cookie_library.Activity.BaseActivity;
 import com.love_cookies.e_tourism.R;
 
-public class MainActivity extends AppCompatActivity {
+import org.xutils.view.annotation.ContentView;
+import org.xutils.view.annotation.ViewInject;
+
+@ContentView(R.layout.activity_main)
+public class MainActivity extends BaseActivity {
+
+    @ViewInject(R.id.text_title)
+    TextView titleTV;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    public void initWidget(Bundle savedInstanceState) {
+        titleTV.setText(R.string.app_name);
+    }
+
+    @Override
+    public void widgetClick(View view) {
+
     }
 }

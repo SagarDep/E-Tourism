@@ -3,4 +3,9 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="theme_color">#58B2DC</color>
+
+    <color name="common_btn_color">#58B2DC</color>
+    <color name="pressed_btn_color">#AA58B2DC</color>
 </resources>
