@@ -25,7 +25,7 @@ import org.xutils.view.annotation.ViewInject;
 @ContentView(R.layout.activity_register)
 public class RegisterActivity extends BaseActivity implements IRegisterView {
 
-    @ViewInject(R.id.text_title)
+    @ViewInject(R.id.title_tv)
     TextView title;
     @ViewInject(R.id.left_btn)
     ImageView leftBtn;

@@ -24,7 +24,7 @@ import org.xutils.view.annotation.ViewInject;
 @ContentView(R.layout.activity_login)
 public class LoginActivity extends BaseActivity implements ILoginView {
 
-    @ViewInject(R.id.text_title)
+    @ViewInject(R.id.title_tv)
     TextView titleTV;
     @ViewInject(R.id.username_et)
     EditText usernameET;
