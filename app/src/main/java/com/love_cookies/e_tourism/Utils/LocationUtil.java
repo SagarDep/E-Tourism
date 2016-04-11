@@ -11,6 +11,7 @@ import android.support.v4.app.ActivityCompat;
 
 import com.google.gson.Gson;
 import com.love_cookies.cookie_library.Utils.ToastUtils;
+import com.love_cookies.e_tourism.Config.AppConfig;
 import com.love_cookies.e_tourism.Model.Bean.LocationBean;
 import com.love_cookies.e_tourism.R;
 
@@ -95,7 +96,7 @@ public class LocationUtil {
      * @param location
      */
     public void reLocation(Location location) {
-        RequestParams requestParams = new RequestParams("http://api.map.baidu.com/geocoder");
+        RequestParams requestParams = new RequestParams(AppConfig.RE_LOCATION_URL);
         requestParams.addQueryStringParameter("output", "json");
         requestParams.addQueryStringParameter("location", location.getLatitude() + "," + location.getLongitude());
         x.http().post(requestParams, new Callback.CommonCallback<String>() {
