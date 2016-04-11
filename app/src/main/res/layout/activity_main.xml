@@ -19,9 +19,10 @@
 
     <RadioGroup
         android:layout_width="match_parent"
-        android:layout_height="150px"
+        android:layout_height="160px"
         android:orientation="horizontal"
-        android:gravity="center">
+        android:gravity="center"
+        android:padding="15px">
 
         <RadioButton
             android:layout_width="0dp"
@@ -30,7 +31,9 @@
             android:gravity="center"
             android:button="@null"
             android:text="计划"
-            android:textColor="@drawable/main_menu_bg"/>
+            android:textColor="@drawable/main_menu_bg"
+            android:textSize="36px"
+            android:drawableTop="@drawable/main_menu_plan_bg"/>
 
         <RadioButton
             android:layout_width="0dp"
@@ -39,7 +42,9 @@
             android:gravity="center"
             android:button="@null"
             android:text="随记"
-            android:textColor="@drawable/main_menu_bg"/>
+            android:textColor="@drawable/main_menu_bg"
+            android:textSize="36px"
+            android:drawableTop="@drawable/main_menu_note_bg"/>
 
         <RadioButton
             android:layout_width="0dp"
@@ -48,7 +53,9 @@
             android:gravity="center"
             android:button="@null"
             android:text="朋友圈"
-            android:textColor="@drawable/main_menu_bg"/>
+            android:textColor="@drawable/main_menu_bg"
+            android:textSize="36px"
+            android:drawableTop="@drawable/main_menu_circle_bg"/>
 
         <RadioButton
             android:layout_width="0dp"
@@ -57,7 +64,9 @@
             android:gravity="center"
             android:button="@null"
             android:text="我"
-            android:textColor="@drawable/main_menu_bg"/>
+            android:textColor="@drawable/main_menu_bg"
+            android:textSize="36px"
+            android:drawableTop="@drawable/main_menu_mine_bg"/>
 
     </RadioGroup>
 
