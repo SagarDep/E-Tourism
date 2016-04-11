@@ -18,4 +18,9 @@
     <string name="register_success_text">注册成功，现在你可以登录啦</string>
     <string name="register_failed_text">注册失败</string>
     <string name="login_failed_text">登录失败</string>
+
+    <string name="plan_text">计划</string>
+    <string name="note_text">随记</string>
+    <string name="circle_text">动态圈</string>
+    <string name="mine_text">我</string>
 </resources>

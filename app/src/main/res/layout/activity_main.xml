@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -18,6 +17,7 @@
         android:background="@color/BLACK_A20" />
 
     <RadioGroup
+        android:id="@+id/main_menu"
         android:layout_width="match_parent"
         android:layout_height="160px"
         android:orientation="horizontal"
@@ -25,45 +25,49 @@
         android:padding="15px">
 
         <RadioButton
+            android:id="@+id/plan_btn"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
             android:button="@null"
-            android:text="计划"
+            android:text="@string/plan_text"
             android:textColor="@drawable/main_menu_bg"
             android:textSize="36px"
             android:drawableTop="@drawable/main_menu_plan_bg"/>
 
         <RadioButton
+            android:id="@+id/note_btn"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
             android:button="@null"
-            android:text="随记"
+            android:text="@string/note_text"
             android:textColor="@drawable/main_menu_bg"
             android:textSize="36px"
             android:drawableTop="@drawable/main_menu_note_bg"/>
 
         <RadioButton
+            android:id="@+id/circle_btn"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
             android:button="@null"
-            android:text="朋友圈"
+            android:text="@string/circle_text"
             android:textColor="@drawable/main_menu_bg"
             android:textSize="36px"
             android:drawableTop="@drawable/main_menu_circle_bg"/>
 
         <RadioButton
+            android:id="@+id/mine_btn"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
             android:button="@null"
-            android:text="我"
+            android:text="@string/mine_text"
             android:textColor="@drawable/main_menu_bg"
             android:textSize="36px"
             android:drawableTop="@drawable/main_menu_mine_bg"/>
