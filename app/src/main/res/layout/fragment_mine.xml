@@ -61,6 +61,7 @@
         custom:Title="@string/mine_item_update_password" />
 
     <TextView
+        android:id="@+id/logout_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="100px"

@@ -11,4 +11,5 @@ public interface IMineView {
     void getUserInfo();
     void setUserInfo(UserBean userBean);
     void doLogout();
+    void turnToLogin();
 }
