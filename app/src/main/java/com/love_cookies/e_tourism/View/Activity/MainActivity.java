@@ -42,6 +42,7 @@ public class MainActivity extends BaseActivity {
         fragList.add(new MineFragment());
         mainPageAdapter = new MainPageAdapter(getSupportFragmentManager(), fragList);
         contentView.setAdapter(mainPageAdapter);
+        contentView.setOffscreenPageLimit(4);
         mainMenu.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {

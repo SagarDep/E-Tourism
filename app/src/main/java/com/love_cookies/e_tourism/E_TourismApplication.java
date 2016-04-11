@@ -2,6 +2,7 @@ package com.love_cookies.e_tourism;
 
 import com.love_cookies.cookie_library.Application.BaseApplication;
 import com.love_cookies.e_tourism.Config.AppConfig;
+import com.love_cookies.e_tourism.Utils.LocationUtil;
 
 import cn.bmob.v3.Bmob;
 
@@ -15,5 +16,6 @@ public class E_TourismApplication extends BaseApplication {
     public void onCreate() {
         super.onCreate();
         Bmob.initialize(this, AppConfig.APPID);
+        LocationUtil.getInstance().getLocation(this);
     }
 }

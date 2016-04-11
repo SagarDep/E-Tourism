@@ -23,4 +23,6 @@
     <string name="note_text">随记</string>
     <string name="circle_text">动态圈</string>
     <string name="mine_text">我</string>
+    
+    <string name="no_permissions_for_location">没有定位权限，请给予权限后重新启动（现在将使用默认位置）</string>
 </resources>
