@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="24px"
-            android:padding="6px"
+            android:padding="18px"
             android:textColor="@color/black"
             android:textSize="42px"
             tools:text="条目" />

@@ -73,7 +73,7 @@
             android:layout_weight="1"
             android:background="@drawable/common_btn_bg"
             android:gravity="center"
-            android:padding="15px"
+            android:padding="24px"
             android:text="@string/login_btn_text"
             android:textColor="@color/white"
             android:textSize="54px" />
@@ -86,7 +86,7 @@
             android:layout_marginLeft="30px"
             android:background="@drawable/common_btn_bg"
             android:gravity="center"
-            android:padding="15px"
+            android:padding="24px"
             android:text="@string/register_btn_text"
             android:textColor="@color/white"
             android:textSize="54px" />
