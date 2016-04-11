@@ -1,13 +1,76 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.love_cookies.e_tourism.View.Fragment.MineFragment">
+    android:background="@color/white"
+    android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
+    <!-- 用户信息 -->
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="500px"
+        android:background="@color/theme_color"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="250px"
+            android:layout_height="250px"
+            android:scaleType="centerCrop"
+            android:src="@drawable/user_head"
+            android:tint="@color/white" />
+
+        <TextView
+            android:id="@+id/username_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24px"
+            android:textColor="@color/white"
+            android:textSize="54px"
+            android:textStyle="bold"
+            tools:text="Cookie" />
+
+    </com.zhy.autolayout.AutoLinearLayout>
+
+    <!-- 功能 -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="30px"
+        android:background="@color/lightgray" />
+
+    <com.love_cookies.e_tourism.View.Widget.MineItemView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        custom:Title="@string/mine_item_update_password" />
+
+    <com.love_cookies.e_tourism.View.Widget.MineItemView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        custom:Title="@string/mine_item_update_password" />
+
+    <com.love_cookies.e_tourism.View.Widget.MineItemView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        custom:Title="@string/mine_item_update_password" />
+
+    <com.love_cookies.e_tourism.View.Widget.MineItemView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        custom:Title="@string/mine_item_update_password" />
+
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/mine_text" />
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100px"
+        android:layout_marginRight="100px"
+        android:layout_marginTop="200px"
+        android:background="@drawable/common_btn_bg"
+        android:gravity="center"
+        android:padding="15px"
+        android:text="@string/logout_btn_text"
+        android:textColor="@color/white"
+        android:textSize="54px" />
 
-</FrameLayout>
+</com.zhy.autolayout.AutoLinearLayout>
