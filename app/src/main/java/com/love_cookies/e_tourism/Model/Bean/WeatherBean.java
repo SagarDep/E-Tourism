@@ -216,7 +216,7 @@ public class WeatherBean {
                     }
 
                     public String getImg() {
-                        return img;
+                        return "w" + img;
                     }
 
                     public void setImg(String img) {

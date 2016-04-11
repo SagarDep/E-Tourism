@@ -1,4 +1,5 @@
 <com.love_cookies.cookie_library.Widget.LoadAndRefreshView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -25,14 +26,14 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:src="@drawable/w00" />
+                    tools:src="@drawable/w00" />
 
                 <TextView
                     android:id="@+id/city_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="24px"
-                    android:text="南京"
+                    tools:text="南京"
                     android:textColor="@color/white"
                     android:textSize="54px" />
 
@@ -43,9 +44,9 @@
                     android:layout_centerVertical="true"
                     android:layout_marginRight="42px"
                     android:layout_toLeftOf="@id/weather_iv"
-                    android:text="19℃"
+                    tools:text="19℃"
                     android:textColor="@color/white"
-                    android:textSize="150px"
+                    android:textSize="120px"
                     android:textStyle="bold" />
 
                 <TextView
@@ -55,9 +56,9 @@
                     android:layout_centerVertical="true"
                     android:layout_marginRight="42px"
                     android:layout_toLeftOf="@id/temperature_tv"
-                    android:text="晴"
+                    tools:text="晴"
                     android:textColor="@color/white"
-                    android:textSize="150px"
+                    android:textSize="120px"
                     android:textStyle="bold" />
 
             </com.zhy.autolayout.AutoRelativeLayout>

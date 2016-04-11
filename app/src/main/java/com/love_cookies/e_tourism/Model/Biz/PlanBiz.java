@@ -1,17 +1,9 @@
 package com.love_cookies.e_tourism.Model.Biz;
 
-import android.Manifest;
-import android.content.Context;
-import android.content.pm.PackageManager;
-import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
-import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
-
 import com.google.gson.Gson;
 import com.love_cookies.cookie_library.Interface.CallBack;
-import com.love_cookies.e_tourism.Model.Bean.LocationBean;
+import com.love_cookies.e_tourism.Config.AppConfig;
+import com.love_cookies.e_tourism.Model.Bean.WeatherBean;
 import com.love_cookies.e_tourism.Model.Biz.Interface.IPlanBiz;
 
 import org.xutils.common.Callback;
@@ -26,8 +18,33 @@ import org.xutils.x;
 public class PlanBiz implements IPlanBiz {
 
     @Override
-    public void getWeather(String city, CallBack callBack) {
+    public void getWeather(String city, final CallBack callBack) {
+        RequestParams requestParams = new RequestParams(AppConfig.WEATHER_URL);
+        requestParams.addQueryStringParameter("cityname", city);
+        requestParams.addQueryStringParameter("key", AppConfig.APPKEY);
+        x.http().get(requestParams, new Callback.CommonCallback<String>() {
+            @Override
+            public void onSuccess(String result) {
+                Gson gson = new Gson();
+                WeatherBean weatherBean = gson.fromJson(result, WeatherBean.class);
+                callBack.onSuccess(weatherBean);
+            }
 
+            @Override
+            public void onError(Throwable ex, boolean isOnCallback) {
+
+            }
+
+            @Override
+            public void onCancelled(CancelledException cex) {
+
+            }
+
+            @Override
+            public void onFinished() {
+
+            }
+        });
     }
 
     @Override
