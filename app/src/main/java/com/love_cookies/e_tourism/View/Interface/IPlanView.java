@@ -8,6 +8,7 @@ import com.love_cookies.e_tourism.Model.Bean.WeatherBean;
  * 计划页View接口
  */
 public interface IPlanView {
+    String getCity();
     void getWeather(String city);
     void setWeather(WeatherBean weatherBean);
     void getPlanList();

@@ -1,5 +1,6 @@
 <com.love_cookies.cookie_library.Widget.LoadAndRefreshView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/load_and_refresh_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -26,7 +27,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    tools:src="@drawable/w00" />
+                    tools:src="@drawable/w0" />
 
                 <TextView
                     android:id="@+id/city_tv"

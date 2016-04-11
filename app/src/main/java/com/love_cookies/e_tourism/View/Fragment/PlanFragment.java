@@ -2,11 +2,14 @@ package com.love_cookies.e_tourism.View.Fragment;
 
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.love_cookies.cookie_library.Fragment.BaseFragment;
+import com.love_cookies.cookie_library.Widget.LoadAndRefreshView;
 import com.love_cookies.e_tourism.Model.Bean.LocationBean;
 import com.love_cookies.e_tourism.Model.Bean.WeatherBean;
 import com.love_cookies.e_tourism.Presenter.PlanPresenter;
@@ -24,8 +27,10 @@ import org.xutils.view.annotation.ViewInject;
  * 计划 碎片
  */
 @ContentView(R.layout.fragment_plan)
-public class PlanFragment extends BaseFragment implements IPlanView {
+public class PlanFragment extends BaseFragment implements IPlanView, LoadAndRefreshView.OnHeaderRefreshListener, LoadAndRefreshView.OnFooterRefreshListener {
 
+    @ViewInject(R.id.load_and_refresh_view)
+    LoadAndRefreshView loadAndRefreshView;
     @ViewInject(R.id.weather_iv)
     ImageView weatherIV;
     @ViewInject(R.id.city_tv)
@@ -39,6 +44,18 @@ public class PlanFragment extends BaseFragment implements IPlanView {
 
     @Override
     public void initWidget(Bundle savedInstanceState) {
+        getWeather(getCity());
+        loadAndRefreshView.setOnHeaderRefreshListener(this);
+        loadAndRefreshView.setOnFooterRefreshListener(this);
+    }
+
+    @Override
+    public void widgetClick(View view) {
+
+    }
+
+    @Override
+    public String getCity() {
         LocationBean locationBean = LocationUtil.getInstance().locationBean;
         String city;
         if(locationBean != null) {
@@ -46,12 +63,7 @@ public class PlanFragment extends BaseFragment implements IPlanView {
         } else {
             city = "南京市";
         }
-        getWeather(city);
-    }
-
-    @Override
-    public void widgetClick(View view) {
-
+        return city;
     }
 
     @Override
@@ -67,6 +79,7 @@ public class PlanFragment extends BaseFragment implements IPlanView {
         String format = getContext().getResources().getString(R.string.temperature_text);
         String temp = String. format(format , weatherBean.getResult().getData().getRealtime().getWeather().getTemperature());
         temperatureTV.setText(temp);
+        onComplete();
     }
 
     @Override
@@ -84,4 +97,28 @@ public class PlanFragment extends BaseFragment implements IPlanView {
 
     }
 
+    @Override
+    public void onFooterRefresh(LoadAndRefreshView view) {
+
+    }
+
+    @Override
+    public void onHeaderRefresh(LoadAndRefreshView view) {
+        getWeather(getCity());
+    }
+
+    public void onComplete() {
+        final int duration = 3000;
+        new Handler() {
+            @Override
+            public void handleMessage(Message msg) {
+                switch (msg.what) {
+                    case 0:
+                        loadAndRefreshView.onHeaderRefreshComplete();
+                        loadAndRefreshView.onFooterRefreshComplete();
+                        break;
+                }
+            }
+        }.sendEmptyMessageDelayed(0, duration);
+    }
 }
