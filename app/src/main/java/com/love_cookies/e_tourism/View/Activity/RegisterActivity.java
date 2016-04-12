@@ -43,7 +43,7 @@ public class RegisterActivity extends BaseActivity implements IRegisterView {
     @Override
     public void initWidget(Bundle savedInstanceState) {
         title.setText(R.string.register_title);
-        leftBtn.setImageResource(R.drawable.title_btn_back);
+        leftBtn.setImageResource(R.mipmap.title_btn_back);
         leftBtn.setOnClickListener(this);
         registerBtn.setOnClickListener(this);
     }

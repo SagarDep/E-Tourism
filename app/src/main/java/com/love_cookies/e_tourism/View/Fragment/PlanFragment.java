@@ -31,6 +31,8 @@ public class PlanFragment extends BaseFragment implements IPlanView, LoadAndRefr
 
     @ViewInject(R.id.title_tv)
     TextView titleTV;
+    @ViewInject(R.id.right_btn)
+    ImageView rightBtn;
     @ViewInject(R.id.load_and_refresh_view)
     LoadAndRefreshView loadAndRefreshView;
     @ViewInject(R.id.weather_iv)
@@ -47,6 +49,8 @@ public class PlanFragment extends BaseFragment implements IPlanView, LoadAndRefr
     @Override
     public void initWidget(Bundle savedInstanceState) {
         titleTV.setText(R.string.plan_text);
+        rightBtn.setImageResource(R.mipmap.title_btn_add);
+        rightBtn.setOnClickListener(this);
         getWeather(getCity());
         loadAndRefreshView.setOnHeaderRefreshListener(this);
         loadAndRefreshView.setOnFooterRefreshListener(this);
@@ -54,7 +58,12 @@ public class PlanFragment extends BaseFragment implements IPlanView, LoadAndRefr
 
     @Override
     public void widgetClick(View view) {
-
+        switch (view.getId()) {
+            case R.id.right_btn:
+                break;
+            default:
+                break;
+        }
     }
 
     @Override
