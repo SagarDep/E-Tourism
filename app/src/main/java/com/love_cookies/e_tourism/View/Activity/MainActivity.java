@@ -2,18 +2,21 @@ package com.love_cookies.e_tourism.View.Activity;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.love_cookies.cookie_library.Activity.BaseActivity;
+import com.love_cookies.cookie_library.Application.ActivityCollections;
+import com.love_cookies.cookie_library.Utils.ToastUtils;
 import com.love_cookies.cookie_library.Widget.NoScrollViewPager;
 import com.love_cookies.e_tourism.R;
 import com.love_cookies.e_tourism.View.Adapter.MainPageAdapter;
 import com.love_cookies.e_tourism.View.Fragment.CircleFragment;
-import com.love_cookies.e_tourism.View.Fragment.SurroundFragment;
 import com.love_cookies.e_tourism.View.Fragment.MineFragment;
 import com.love_cookies.e_tourism.View.Fragment.PlanFragment;
+import com.love_cookies.e_tourism.View.Fragment.SurroundFragment;
 
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.ViewInject;
@@ -33,6 +36,8 @@ public class MainActivity extends BaseActivity {
 
     private List<Fragment> fragList = new ArrayList<>();
     private MainPageAdapter mainPageAdapter;
+
+    private long exitTime;
 
     @Override
     public void initWidget(Bundle savedInstanceState) {
@@ -59,6 +64,28 @@ public class MainActivity extends BaseActivity {
     @Override
     public void widgetClick(View view) {
 
+    }
+
+    /**
+     * 点两次返回退出程序
+     * @param keyCode
+     * @param event
+     * @return
+     */
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN) {
+            if ((System.currentTimeMillis() - exitTime) > 2000)
+            {
+                ToastUtils.show(getApplicationContext(), R.string.exit_tip);
+                exitTime = System.currentTimeMillis();
+            } else {
+                ActivityCollections.getInstance().finishAllActivity();
+                System.exit(0);
+            }
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
     }
 
 }
