@@ -29,6 +29,8 @@ import org.xutils.view.annotation.ViewInject;
 @ContentView(R.layout.fragment_plan)
 public class PlanFragment extends BaseFragment implements IPlanView, LoadAndRefreshView.OnHeaderRefreshListener, LoadAndRefreshView.OnFooterRefreshListener {
 
+    @ViewInject(R.id.title_tv)
+    TextView titleTV;
     @ViewInject(R.id.load_and_refresh_view)
     LoadAndRefreshView loadAndRefreshView;
     @ViewInject(R.id.weather_iv)
@@ -44,6 +46,7 @@ public class PlanFragment extends BaseFragment implements IPlanView, LoadAndRefr
 
     @Override
     public void initWidget(Bundle savedInstanceState) {
+        titleTV.setText(R.string.plan_text);
         getWeather(getCity());
         loadAndRefreshView.setOnHeaderRefreshListener(this);
         loadAndRefreshView.setOnFooterRefreshListener(this);

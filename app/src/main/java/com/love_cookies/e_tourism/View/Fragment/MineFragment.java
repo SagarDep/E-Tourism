@@ -24,6 +24,8 @@ import org.xutils.view.annotation.ViewInject;
 @ContentView(R.layout.fragment_mine)
 public class MineFragment extends BaseFragment implements IMineView {
 
+    @ViewInject(R.id.title_tv)
+    TextView titleTV;
     @ViewInject(R.id.username_tv)
     TextView usernameTV;
     @ViewInject(R.id.logout_btn)
@@ -33,6 +35,7 @@ public class MineFragment extends BaseFragment implements IMineView {
 
     @Override
     public void initWidget(Bundle savedInstanceState) {
+        titleTV.setText(R.string.mine_text);
         getUserInfo();
         logoutBtn.setOnClickListener(this);
     }

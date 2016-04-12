@@ -6,6 +6,8 @@
     android:background="@color/white"
     android:orientation="vertical">
 
+    <include layout="@layout/view_title_bar" />
+
     <!-- 用户信息 -->
     <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="match_parent"
