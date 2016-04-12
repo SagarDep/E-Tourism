@@ -3,6 +3,7 @@ package com.love_cookies.e_tourism.View.Fragment;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.love_cookies.cookie_library.Fragment.BaseFragment;
@@ -21,14 +22,23 @@ public class NoteFragment extends BaseFragment {
 
     @ViewInject(R.id.title_tv)
     TextView titleTV;
+    @ViewInject(R.id.right_btn)
+    ImageView rightBtn;
 
     @Override
     public void initWidget(Bundle savedInstanceState) {
         titleTV.setText(R.string.note_text);
+        rightBtn.setImageResource(R.mipmap.title_btn_add);
+        rightBtn.setOnClickListener(this);
     }
 
     @Override
     public void widgetClick(View view) {
-
+        switch (view.getId()) {
+            case R.id.right_btn:
+                break;
+            default:
+                break;
+        }
     }
 }
