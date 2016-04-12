@@ -96,7 +96,7 @@ public class LocationUtil {
      * @param location
      */
     public void reLocation(Location location) {
-        RequestParams requestParams = new RequestParams(AppConfig.RE_LOCATION_URL);
+        RequestParams requestParams = new RequestParams(AppConfig.RE_LOCATION_API);
         requestParams.addQueryStringParameter("output", "json");
         requestParams.addQueryStringParameter("location", location.getLatitude() + "," + location.getLongitude());
         x.http().post(requestParams, new Callback.CommonCallback<String>() {

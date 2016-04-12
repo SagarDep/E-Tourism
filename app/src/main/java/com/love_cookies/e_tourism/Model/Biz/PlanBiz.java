@@ -19,7 +19,7 @@ public class PlanBiz implements IPlanBiz {
 
     @Override
     public void getWeather(String city, final CallBack callBack) {
-        RequestParams requestParams = new RequestParams(AppConfig.WEATHER_URL);
+        RequestParams requestParams = new RequestParams(AppConfig.WEATHER_API);
         requestParams.addQueryStringParameter("cityname", city);
         requestParams.addQueryStringParameter("key", AppConfig.APPKEY);
         x.http().get(requestParams, new Callback.CommonCallback<String>() {
