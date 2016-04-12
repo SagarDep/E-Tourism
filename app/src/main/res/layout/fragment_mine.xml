@@ -29,8 +29,11 @@
             android:layout_centerHorizontal="true"
             android:textColor="@color/theme_color"
             android:padding="45px"
-            android:textSize="54px"
+            android:textSize="48px"
             android:textStyle="bold"
+            android:maxEms="7"
+            android:singleLine="true"
+            android:ellipsize="end"
             tools:text="Cookie" />
 
     </com.zhy.autolayout.AutoRelativeLayout>
