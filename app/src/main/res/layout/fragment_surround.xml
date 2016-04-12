@@ -1,0 +1,86 @@
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include layout="@layout/view_title_bar" />
+
+    <com.love_cookies.cookie_library.Widget.LoadAndRefreshView
+        android:id="@+id/load_and_refresh_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.zhy.autolayout.AutoLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <!-- 天气 -->
+                <com.zhy.autolayout.AutoRelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="500px"
+                    android:background="@color/theme_color">
+
+                    <ImageView
+                        android:id="@+id/weather_iv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        tools:src="@drawable/w0" />
+
+                    <TextView
+                        android:id="@+id/city_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="24px"
+                        android:textColor="@color/white"
+                        android:textSize="54px"
+                        tools:text="南京" />
+
+                    <TextView
+                        android:id="@+id/temperature_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="42px"
+                        android:layout_toLeftOf="@id/weather_iv"
+                        android:textColor="@color/white"
+                        android:textSize="120px"
+                        android:textStyle="bold"
+                        tools:text="19℃" />
+
+                    <TextView
+                        android:id="@+id/info_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="42px"
+                        android:layout_toLeftOf="@id/temperature_tv"
+                        android:textColor="@color/white"
+                        android:textSize="120px"
+                        android:textStyle="bold"
+                        tools:text="晴" />
+
+                </com.zhy.autolayout.AutoRelativeLayout>
+
+                <!-- 周边列表 -->
+                <com.love_cookies.cookie_library.Widget.ListViewForScrollView
+                    android:id="@+id/location_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </com.zhy.autolayout.AutoLinearLayout>
+
+        </ScrollView>
+
+    </com.love_cookies.cookie_library.Widget.LoadAndRefreshView>
+
+</com.zhy.autolayout.AutoLinearLayout>

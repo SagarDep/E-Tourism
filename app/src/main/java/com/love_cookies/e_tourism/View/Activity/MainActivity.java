@@ -11,8 +11,8 @@ import com.love_cookies.cookie_library.Widget.NoScrollViewPager;
 import com.love_cookies.e_tourism.R;
 import com.love_cookies.e_tourism.View.Adapter.MainPageAdapter;
 import com.love_cookies.e_tourism.View.Fragment.CircleFragment;
+import com.love_cookies.e_tourism.View.Fragment.SurroundFragment;
 import com.love_cookies.e_tourism.View.Fragment.MineFragment;
-import com.love_cookies.e_tourism.View.Fragment.NoteFragment;
 import com.love_cookies.e_tourism.View.Fragment.PlanFragment;
 
 import org.xutils.view.annotation.ContentView;
@@ -29,15 +29,15 @@ public class MainActivity extends BaseActivity {
     @ViewInject(R.id.main_menu)
     RadioGroup mainMenu;
 
-    private int[] radioList = {R.id.plan_btn, R.id.note_btn, R.id.circle_btn, R.id.mine_btn};
+    private int[] radioList = {R.id.surround_btn, R.id.plan_btn, R.id.circle_btn, R.id.mine_btn};
 
     private List<Fragment> fragList = new ArrayList<>();
     private MainPageAdapter mainPageAdapter;
 
     @Override
     public void initWidget(Bundle savedInstanceState) {
+        fragList.add(new SurroundFragment());
         fragList.add(new PlanFragment());
-        fragList.add(new NoteFragment());
         fragList.add(new CircleFragment());
         fragList.add(new MineFragment());
         mainPageAdapter = new MainPageAdapter(getSupportFragmentManager(), fragList);

@@ -7,6 +7,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.love_cookies.cookie_library.Fragment.BaseFragment;
+import com.love_cookies.cookie_library.Widget.LoadAndRefreshView;
 import com.love_cookies.e_tourism.R;
 
 import org.xutils.view.annotation.ContentView;
@@ -24,6 +25,8 @@ public class CircleFragment extends BaseFragment {
     TextView titleTV;
     @ViewInject(R.id.right_btn)
     ImageView rightBtn;
+    @ViewInject(R.id.load_and_refresh_view)
+    LoadAndRefreshView loadAndRefreshView;
 
     @Override
     public void initWidget(Bundle savedInstanceState) {

@@ -13,73 +13,11 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <ScrollView
+        <!-- 计划列表 -->
+        <ListView
+            android:id="@+id/plan_list"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <com.zhy.autolayout.AutoLinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <!-- 天气 -->
-                <com.zhy.autolayout.AutoRelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="500px"
-                    android:background="@color/theme_color">
-
-                    <ImageView
-                        android:id="@+id/weather_iv"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
-                        tools:src="@drawable/w0" />
-
-                    <TextView
-                        android:id="@+id/city_tv"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="24px"
-                        android:textColor="@color/white"
-                        android:textSize="54px"
-                        tools:text="南京" />
-
-                    <TextView
-                        android:id="@+id/temperature_tv"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:layout_marginRight="42px"
-                        android:layout_toLeftOf="@id/weather_iv"
-                        android:textColor="@color/white"
-                        android:textSize="120px"
-                        android:textStyle="bold"
-                        tools:text="19℃" />
-
-                    <TextView
-                        android:id="@+id/info_tv"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:layout_marginRight="42px"
-                        android:layout_toLeftOf="@id/temperature_tv"
-                        android:textColor="@color/white"
-                        android:textSize="120px"
-                        android:textStyle="bold"
-                        tools:text="晴" />
-
-                </com.zhy.autolayout.AutoRelativeLayout>
-
-                <!-- 计划列表 -->
-                <com.love_cookies.cookie_library.Widget.ListViewForScrollView
-                    android:id="@+id/plan_list"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
-
-            </com.zhy.autolayout.AutoLinearLayout>
-
-        </ScrollView>
+            android:layout_height="match_parent" />
 
     </com.love_cookies.cookie_library.Widget.LoadAndRefreshView>
 
