@@ -27,6 +27,11 @@
     <string name="circle_text">动态圈</string>
     <string name="mine_text">我</string>
 
+    <string name="hotel_text">酒店</string>
+    <string name="mall_text">商场</string>
+    <string name="food_text">美食</string>
+    <string name="view_text">景区</string>
+
     <string name="temperature_text">%s ℃</string>
 
     <string name="no_permissions_for_location">没有定位权限，请给予权限后重新启动\n（现在将使用默认位置）</string>
