@@ -7,6 +7,7 @@ import android.widget.TextView;
 
 import com.love_cookies.cookie_library.Application.ActivityCollections;
 import com.love_cookies.cookie_library.Fragment.BaseFragment;
+import com.love_cookies.cookie_library.Utils.ToastUtils;
 import com.love_cookies.e_tourism.Model.Bean.UserBean;
 import com.love_cookies.e_tourism.Presenter.MinePresenter;
 import com.love_cookies.e_tourism.R;
@@ -38,11 +39,15 @@ public class MineFragment extends BaseFragment implements IMineView {
         titleTV.setText(R.string.mine_text);
         getUserInfo();
         logoutBtn.setOnClickListener(this);
+        usernameTV.setOnClickListener(this);
     }
 
     @Override
     public void widgetClick(View view) {
         switch (view.getId()) {
+            case R.id.username_tv:
+                ToastUtils.show(getActivity(), usernameTV.getText().toString());
+                break;
             case R.id.logout_btn:
                 doLogout();
                 break;
