@@ -67,6 +67,10 @@ public class SurroundFragment extends BaseFragment implements ISurroundView, Loa
 
     SurroundPresenter surroundPresenter = new SurroundPresenter(this);
 
+    /**
+     * 初始化控件
+     * @param savedInstanceState
+     */
     @Override
     public void initWidget(Bundle savedInstanceState) {
         titleTV.setText(R.string.surround_text);
@@ -89,12 +93,19 @@ public class SurroundFragment extends BaseFragment implements ISurroundView, Loa
         surroundList.setAdapter(surroundAdapter);
     }
 
+    /**
+     * 控件点击事件
+     * @param view
+     */
     @Override
     public void widgetClick(View view) {
 
     }
 
-    @Override
+    /**
+     * 获取城市
+     * @return
+     */
     public String getCity() {
         LocationBean locationBean = LocationUtil.getInstance().locationBean;
         String city;
@@ -106,11 +117,19 @@ public class SurroundFragment extends BaseFragment implements ISurroundView, Loa
         return city;
     }
 
+    /**
+     * 获取天气
+     * @param city
+     */
     @Override
     public void getWeather(String city) {
         surroundPresenter.getWeather(city);
     }
 
+    /**
+     * 设置天气
+     * @param weatherBean
+     */
     @Override
     public void setWeather(WeatherBean weatherBean) {
         weatherIV.setImageResource(WeatherImgUtil.getInstance().getWeatherImg(getActivity(), weatherBean.getResult().getData().getRealtime().getWeather().getImg()));
@@ -122,11 +141,20 @@ public class SurroundFragment extends BaseFragment implements ISurroundView, Loa
         onComplete();
     }
 
+    /**
+     * 获取周边数据
+     * @param locationBean
+     * @param keyword
+     */
     @Override
     public void getSurround(LocationBean locationBean, String keyword) {
         surroundPresenter.getSurround(locationBean, keyword);
     }
 
+    /**
+     * 设置周边数据
+     * @param surroundBean
+     */
     @Override
     public void setSurround(SurroundBean surroundBean) {
         surroundDatas.clear();
@@ -135,23 +163,30 @@ public class SurroundFragment extends BaseFragment implements ISurroundView, Loa
         onComplete();
     }
 
-    @Override
-    public void toDetail() {
-
-    }
-
+    /**
+     * 上拉加载
+     * @param view
+     */
     @Override
     public void onFooterRefresh(LoadAndRefreshView view) {
         getSurround(LocationUtil.getInstance().locationBean, keyword);
     }
 
+    /**
+     * 下拉刷新
+     * @param view
+     */
     @Override
     public void onHeaderRefresh(LoadAndRefreshView view) {
         getWeather(getCity());
         getSurround(LocationUtil.getInstance().locationBean, keyword);
     }
 
+    /**
+     * 下拉刷新&上拉加载完成
+     */
     public void onComplete() {
+        //故意延迟3s
         final int duration = 3000;
         new Handler() {
             @Override
@@ -166,6 +201,9 @@ public class SurroundFragment extends BaseFragment implements ISurroundView, Loa
         }.sendEmptyMessageDelayed(0, duration);
     }
 
+    /**
+     * 周边列表适配器
+     */
     class SurroundAdapter extends CommonAdapter<SurroundBean.ResultsBean> {
 
         public SurroundAdapter(Context context, List<SurroundBean.ResultsBean> datas) {
