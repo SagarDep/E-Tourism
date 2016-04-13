@@ -32,6 +32,10 @@ public class PlanFragment extends BaseFragment implements IPlanView {
 
     PlanPresenter planPresenter = new PlanPresenter(this);
 
+    /**
+     * 初始化控件
+     * @param savedInstanceState
+     */
     @Override
     public void initWidget(Bundle savedInstanceState) {
         titleTV.setText(R.string.plan_text);
@@ -39,6 +43,10 @@ public class PlanFragment extends BaseFragment implements IPlanView {
         rightBtn.setOnClickListener(this);
     }
 
+    /**
+     * 控件点击事件
+     * @param view
+     */
     @Override
     public void widgetClick(View view) {
         switch (view.getId()) {

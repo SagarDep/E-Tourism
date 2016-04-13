@@ -19,11 +19,17 @@ public class MinePresenter {
         this.iMineView = iMineView;
     }
 
+    /**
+     * 获取用户信息
+     */
     public void getUserInfo() {
         UserBean userBean = BmobUser.getCurrentUser(ActivityCollections.getInstance().currentActivity(), UserBean.class);//获取当前用户
         iMineView.setUserInfo(userBean);
     }
 
+    /**
+     * 注销登录
+     */
     public void doLogout() {
         BmobUser.logOut(ActivityCollections.getInstance().currentActivity());//清除缓存用户对象
         BmobUser.getCurrentUser(ActivityCollections.getInstance().currentActivity());//现在的currentUser是null了

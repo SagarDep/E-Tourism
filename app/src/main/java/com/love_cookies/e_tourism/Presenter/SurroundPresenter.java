@@ -22,6 +22,10 @@ public class SurroundPresenter {
         this.iSurroundView = iSurroundView;
     }
 
+    /**
+     * 获取天气
+     * @param city
+     */
     public void getWeather(String city) {
         surroundBiz.getWeather(city, new CallBack() {
             @Override
@@ -36,6 +40,11 @@ public class SurroundPresenter {
         });
     }
 
+    /**
+     * 获取周边
+     * @param locationBean
+     * @param keyword
+     */
     public void getSurround(LocationBean locationBean, String keyword) {
         surroundBiz.getSurround(locationBean, keyword, new CallBack() {
             @Override

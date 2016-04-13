@@ -39,6 +39,10 @@ public class ResetPasswordActivity extends BaseActivity implements IResetPasswor
 
     ResetPasswordPresenter resetPasswordPresenter = new ResetPasswordPresenter(this);
 
+    /**
+     * 初始化控件
+     * @param savedInstanceState
+     */
     @Override
     public void initWidget(Bundle savedInstanceState) {
         titleTV.setText(R.string.mine_item_update_password);
@@ -47,6 +51,10 @@ public class ResetPasswordActivity extends BaseActivity implements IResetPasswor
         submitBtn.setOnClickListener(this);
     }
 
+    /**
+     * 控件点击事件
+     * @param view
+     */
     @Override
     public void widgetClick(View view) {
         switch (view.getId()) {
@@ -61,6 +69,9 @@ public class ResetPasswordActivity extends BaseActivity implements IResetPasswor
         }
     }
 
+    /**
+     * 去修改密码
+     */
     @Override
     public void doResetPassword() {
         String oldPassword = oldPasswordET.getText().toString();
@@ -75,12 +86,19 @@ public class ResetPasswordActivity extends BaseActivity implements IResetPasswor
         }
     }
 
+    /**
+     * 修改密码失败
+     * @param msg
+     */
     @Override
     public void resetFailed(String msg) {
         ProgressUtils.hideProgress();
         ToastUtils.show(this, msg);
     }
 
+    /**
+     * 跳转到登录页
+     */
     @Override
     public void turnToLogin() {
         ToastUtils.show(this, R.string.reset_password_success_tip);

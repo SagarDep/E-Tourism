@@ -18,6 +18,11 @@ import org.xutils.x;
  * 周边逻辑
  */
 public class SurroundBiz implements ISurroundBiz {
+    /**
+     * 获取天气
+     * @param city
+     * @param callBack
+     */
     @Override
     public void getWeather(String city, final CallBack callBack) {
         RequestParams requestParams = new RequestParams(AppConfig.WEATHER_API);
@@ -48,6 +53,12 @@ public class SurroundBiz implements ISurroundBiz {
         });
     }
 
+    /**
+     * 获取周边
+     * @param locationBean
+     * @param keyword
+     * @param callBack
+     */
     @Override
     public void getSurround(LocationBean locationBean, String keyword, final CallBack callBack) {
         RequestParams requestParams = new RequestParams(AppConfig.SURROUND_API);

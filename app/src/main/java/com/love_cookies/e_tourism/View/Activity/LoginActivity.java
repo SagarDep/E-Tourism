@@ -37,6 +37,10 @@ public class LoginActivity extends BaseActivity implements ILoginView {
 
     LoginPresenter loginPresenter = new LoginPresenter(this);
 
+    /**
+     * 初始化控件
+     * @param savedInstanceState
+     */
     @Override
     public void initWidget(Bundle savedInstanceState) {
         titleTV.setText(R.string.login_title);
@@ -45,6 +49,10 @@ public class LoginActivity extends BaseActivity implements ILoginView {
         autoLogin();
     }
 
+    /**
+     * 控件点击事件
+     * @param view
+     */
     @Override
     public void widgetClick(View view) {
         switch (view.getId()) {
@@ -59,6 +67,9 @@ public class LoginActivity extends BaseActivity implements ILoginView {
         }
     }
 
+    /**
+     * 去登录
+     */
     @Override
     public void doLogin() {
         String username = usernameET.getText().toString();
@@ -73,18 +84,28 @@ public class LoginActivity extends BaseActivity implements ILoginView {
         }
     }
 
+    /**
+     * 跳转到主页
+     */
     @Override
     public void turnToMain() {
         ProgressUtils.hideProgress();
         turnThenFinish(MainActivity.class);
     }
 
+    /**
+     * 登录失败
+     * @param msg
+     */
     @Override
     public void loginFailed(String msg) {
         ProgressUtils.hideProgress();
         ToastUtils.show(this, msg);
     }
 
+    /**
+     * 自动登录
+     */
     @Override
     public void autoLogin() {
         loginPresenter.autoLogin();

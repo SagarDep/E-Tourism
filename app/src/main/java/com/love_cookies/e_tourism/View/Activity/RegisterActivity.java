@@ -40,6 +40,10 @@ public class RegisterActivity extends BaseActivity implements IRegisterView {
 
     RegisterPresenter registerPresenter = new RegisterPresenter(this);
 
+    /**
+     * 初始化控件
+     * @param savedInstanceState
+     */
     @Override
     public void initWidget(Bundle savedInstanceState) {
         title.setText(R.string.register_title);
@@ -48,6 +52,10 @@ public class RegisterActivity extends BaseActivity implements IRegisterView {
         registerBtn.setOnClickListener(this);
     }
 
+    /**
+     * 控件点击事件
+     * @param view
+     */
     @Override
     public void widgetClick(View view) {
         switch (view.getId()) {
@@ -62,6 +70,9 @@ public class RegisterActivity extends BaseActivity implements IRegisterView {
         }
     }
 
+    /**
+     * 去注册
+     */
     @Override
     public void doRegister() {
         String username = usernameET.getText().toString();
@@ -79,6 +90,9 @@ public class RegisterActivity extends BaseActivity implements IRegisterView {
         }
     }
 
+    /**
+     * 跳转到登录页
+     */
     @Override
     public void turnToLogin() {
         ProgressUtils.hideProgress();
@@ -86,6 +100,10 @@ public class RegisterActivity extends BaseActivity implements IRegisterView {
         finish();
     }
 
+    /**
+     * 注册失败
+     * @param msg
+     */
     @Override
     public void registerFailed(String msg) {
         ProgressUtils.hideProgress();

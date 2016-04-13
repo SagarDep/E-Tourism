@@ -37,17 +37,31 @@ public class SplashActivity extends BaseActivity {
 		}
 	};
 
+	/**
+	 * 初始化控件
+	 * @param savedInstanceState
+     */
 	@Override
 	public void initWidget(Bundle savedInstanceState) {
 		x.image().bind(splashBgIV, "assets://splash_bg.png", new ImageOptions.Builder().setFadeIn(true).build());
 		handler.postDelayed(runnable, SPLASH_DISPLAY_DURATION);
 	}
 
+	/**
+	 * 控件点击事件
+	 * @param v
+     */
 	@Override
 	public void widgetClick(View v) {
 
 	}
 
+	/**
+	 * 改写物理返回键事件
+	 * @param keyCode
+	 * @param event
+     * @return
+     */
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if (keyCode == KeyEvent.KEYCODE_BACK) {

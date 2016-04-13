@@ -28,6 +28,10 @@ public class CircleFragment extends BaseFragment {
     @ViewInject(R.id.load_and_refresh_view)
     LoadAndRefreshView loadAndRefreshView;
 
+    /**
+     * 初始化控件
+     * @param savedInstanceState
+     */
     @Override
     public void initWidget(Bundle savedInstanceState) {
         titleTV.setText(R.string.circle_text);
@@ -35,6 +39,10 @@ public class CircleFragment extends BaseFragment {
         rightBtn.setOnClickListener(this);
     }
 
+    /**
+     * 控件点击事件
+     * @param view
+     */
     @Override
     public void widgetClick(View view) {
         switch (view.getId()) {

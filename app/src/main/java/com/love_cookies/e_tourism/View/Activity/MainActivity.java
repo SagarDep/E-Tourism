@@ -39,6 +39,10 @@ public class MainActivity extends BaseActivity {
 
     private long exitTime;
 
+    /**
+     * 初始化控件
+     * @param savedInstanceState
+     */
     @Override
     public void initWidget(Bundle savedInstanceState) {
         fragList.add(new SurroundFragment());
@@ -61,6 +65,10 @@ public class MainActivity extends BaseActivity {
         ((RadioButton)mainMenu.getChildAt(0)).setChecked(true);
     }
 
+    /**
+     * 控件点击事件
+     * @param view
+     */
     @Override
     public void widgetClick(View view) {
 

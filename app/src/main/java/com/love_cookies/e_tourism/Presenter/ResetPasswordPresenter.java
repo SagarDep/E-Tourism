@@ -19,6 +19,11 @@ public class ResetPasswordPresenter {
         this.iResetPasswordView = iResetPasswordView;
     }
 
+    /**
+     * 去修改密码
+     * @param old_pwd
+     * @param new_pwd
+     */
     public void doResetPassword(String old_pwd, String new_pwd) {
         BmobUser.updateCurrentUserPassword(ActivityCollections.getInstance().currentActivity(), old_pwd, new_pwd, new UpdateListener() {
             @Override

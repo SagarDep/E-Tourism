@@ -8,8 +8,24 @@ import com.love_cookies.e_tourism.Model.Bean.UserBean;
  * 我View接口
  */
 public interface IMineView {
+    /**
+     * 获取用户信息
+     */
     void getUserInfo();
+
+    /**
+     * 设置用户信息
+     * @param userBean
+     */
     void setUserInfo(UserBean userBean);
+
+    /**
+     * 注销登录
+     */
     void doLogout();
+
+    /**
+     * 跳转到登录页
+     */
     void turnToLogin();
 }
