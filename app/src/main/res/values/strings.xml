@@ -43,4 +43,6 @@
     <string name="temperature_text">%s ℃</string>
 
     <string name="no_permissions_for_location">没有定位权限，请给予权限后重新启动\n（现在将使用默认位置）</string>
+    
+    <string name="detail_title">详情</string>
 </resources>

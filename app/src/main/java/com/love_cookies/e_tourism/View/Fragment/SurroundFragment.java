@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -23,6 +24,7 @@ import com.love_cookies.e_tourism.Presenter.SurroundPresenter;
 import com.love_cookies.e_tourism.R;
 import com.love_cookies.e_tourism.Utils.LocationUtil;
 import com.love_cookies.e_tourism.Utils.WeatherImgUtil;
+import com.love_cookies.e_tourism.View.Activity.SurroundDetailActivity;
 import com.love_cookies.e_tourism.View.Interface.ISurroundView;
 
 import org.xutils.view.annotation.ContentView;
@@ -91,6 +93,14 @@ public class SurroundFragment extends BaseFragment implements ISurroundView, Loa
         ((RadioButton)surroundMenu.getChildAt(0)).setChecked(true);
         surroundAdapter = new SurroundAdapter(getActivity(), surroundDatas);
         surroundList.setAdapter(surroundAdapter);
+        surroundList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Bundle bundle = new Bundle();
+                bundle.putString("uid", surroundDatas.get(position).getUid());
+                turn(SurroundDetailActivity.class, bundle);
+            }
+        });
     }
 
     /**
