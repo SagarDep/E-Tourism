@@ -74,7 +74,7 @@ public class SurroundFragment extends BaseFragment implements ISurroundView, Loa
     @Override
     public void initWidget(Bundle savedInstanceState) {
         titleTV.setText(R.string.surround_text);
-        getWeather(getCity());
+        getWeather(LocationUtil.getInstance().locationBean.getResult().getAddressComponent().getCity());
         loadAndRefreshView.setOnHeaderRefreshListener(this);
         loadAndRefreshView.setOnFooterRefreshListener(this);
         surroundMenu.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -100,21 +100,6 @@ public class SurroundFragment extends BaseFragment implements ISurroundView, Loa
     @Override
     public void widgetClick(View view) {
 
-    }
-
-    /**
-     * 获取城市
-     * @return
-     */
-    public String getCity() {
-        LocationBean locationBean = LocationUtil.getInstance().locationBean;
-        String city;
-        if(locationBean != null) {
-            city = locationBean.getResult().getAddressComponent().getCity();
-        } else {
-            city = "南京市";
-        }
-        return city;
     }
 
     /**
@@ -178,7 +163,7 @@ public class SurroundFragment extends BaseFragment implements ISurroundView, Loa
      */
     @Override
     public void onHeaderRefresh(LoadAndRefreshView view) {
-        getWeather(getCity());
+        getWeather(LocationUtil.getInstance().locationBean.getResult().getAddressComponent().getCity());
         getSurround(LocationUtil.getInstance().locationBean, keyword);
     }
 
