@@ -46,21 +46,7 @@
         android:background="@color/lightgray" />
 
     <com.love_cookies.e_tourism.View.Widget.MineItemView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        custom:Title="@string/mine_item_update_password" />
-
-    <com.love_cookies.e_tourism.View.Widget.MineItemView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        custom:Title="@string/mine_item_update_password" />
-
-    <com.love_cookies.e_tourism.View.Widget.MineItemView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        custom:Title="@string/mine_item_update_password" />
-
-    <com.love_cookies.e_tourism.View.Widget.MineItemView
+        android:id="@+id/reset_password_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         custom:Title="@string/mine_item_update_password" />

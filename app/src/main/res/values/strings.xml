@@ -32,9 +32,15 @@
     <string name="food_text">美食</string>
     <string name="view_text">景区</string>
 
+    <string name="mine_item_update_password">修改密码</string>
+    <string name="old_password_text">原密码：</string>
+    <string name="old_password_text_hint">请输入原密码</string>
+    <string name="new_password_text">新密码：</string>
+    <string name="new_password_text_hint">请输入新密码</string>
+    <string name="submit_btn_text">提交</string>
+    <string name="reset_password_success_tip">密码修改成功，请重新登录</string>
+
     <string name="temperature_text">%s ℃</string>
 
     <string name="no_permissions_for_location">没有定位权限，请给予权限后重新启动\n（现在将使用默认位置）</string>
-
-    <string name="mine_item_update_password">修改密码</string>
 </resources>

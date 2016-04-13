@@ -12,7 +12,9 @@ import com.love_cookies.e_tourism.Model.Bean.UserBean;
 import com.love_cookies.e_tourism.Presenter.MinePresenter;
 import com.love_cookies.e_tourism.R;
 import com.love_cookies.e_tourism.View.Activity.LoginActivity;
+import com.love_cookies.e_tourism.View.Activity.ResetPasswordActivity;
 import com.love_cookies.e_tourism.View.Interface.IMineView;
+import com.love_cookies.e_tourism.View.Widget.MineItemView;
 
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.ViewInject;
@@ -29,6 +31,8 @@ public class MineFragment extends BaseFragment implements IMineView {
     TextView titleTV;
     @ViewInject(R.id.username_tv)
     TextView usernameTV;
+    @ViewInject(R.id.reset_password_btn)
+    MineItemView resetPasswordBtn;
     @ViewInject(R.id.logout_btn)
     TextView logoutBtn;
 
@@ -40,6 +44,7 @@ public class MineFragment extends BaseFragment implements IMineView {
         getUserInfo();
         logoutBtn.setOnClickListener(this);
         usernameTV.setOnClickListener(this);
+        resetPasswordBtn.setOnClickListener(this);
     }
 
     @Override
@@ -47,6 +52,9 @@ public class MineFragment extends BaseFragment implements IMineView {
         switch (view.getId()) {
             case R.id.username_tv:
                 ToastUtils.show(getActivity(), usernameTV.getText().toString());
+                break;
+            case R.id.reset_password_btn:
+                turn(ResetPasswordActivity.class);
                 break;
             case R.id.logout_btn:
                 doLogout();
@@ -58,7 +66,7 @@ public class MineFragment extends BaseFragment implements IMineView {
 
     @Override
     public void getUserInfo() {
-        minePresenter.getUserInfo(getActivity());
+        minePresenter.getUserInfo();
     }
 
     @Override
@@ -68,7 +76,7 @@ public class MineFragment extends BaseFragment implements IMineView {
 
     @Override
     public void doLogout() {
-        minePresenter.doLogout(getActivity());
+        minePresenter.doLogout();
     }
 
     @Override
