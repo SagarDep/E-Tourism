@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/view_title_bar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.zhy.autolayout.AutoLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="30px">
+
+            <RadioGroup
+                android:id="@+id/type_menu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/item_selectbox_bg"
+                    android:padding="30px"
+                    android:text="@string/plan_text"
+                    android:textColor="@color/black"
+                    android:textSize="48px" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/item_selectbox_bg"
+                    android:padding="30px"
+                    android:text="@string/note_text"
+                    android:textColor="@color/black"
+                    android:textSize="48px" />
+
+            </RadioGroup>
+
+            <EditText
+                android:id="@+id/content_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30px"
+                android:background="@drawable/square_dd_et_bg"
+                android:gravity="left|top"
+                android:hint="@string/content_hint"
+                android:minLines="10"
+                android:padding="24px"
+                android:textColorHint="#BFBFBF"
+                android:textSize="54px" />
+
+        </com.zhy.autolayout.AutoLinearLayout>
+
+    </ScrollView>
+
+</com.zhy.autolayout.AutoLinearLayout>

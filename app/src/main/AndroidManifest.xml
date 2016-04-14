@@ -31,7 +31,9 @@
         <activity android:name=".View.Activity.LoginActivity" />
         <activity android:name=".View.Activity.RegisterActivity" />
         <activity android:name=".View.Activity.ResetPasswordActivity" />
-        <activity android:name=".View.Activity.SurroundDetailActivity"></activity>
+        <activity android:name=".View.Activity.SurroundDetailActivity" />
+        <activity android:name=".View.Activity.AddPlanActivity"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
     </application>
 
 </manifest>

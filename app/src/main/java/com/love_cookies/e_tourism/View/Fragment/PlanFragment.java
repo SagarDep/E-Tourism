@@ -10,6 +10,7 @@ import com.love_cookies.cookie_library.Fragment.BaseFragment;
 import com.love_cookies.cookie_library.Widget.LoadAndRefreshView;
 import com.love_cookies.e_tourism.Presenter.PlanPresenter;
 import com.love_cookies.e_tourism.R;
+import com.love_cookies.e_tourism.View.Activity.AddPlanActivity;
 import com.love_cookies.e_tourism.View.Interface.IPlanView;
 
 import org.xutils.view.annotation.ContentView;
@@ -51,6 +52,7 @@ public class PlanFragment extends BaseFragment implements IPlanView {
     public void widgetClick(View view) {
         switch (view.getId()) {
             case R.id.right_btn:
+                turn(AddPlanActivity.class);
                 break;
             default:
                 break;
