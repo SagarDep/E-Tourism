@@ -49,4 +49,5 @@
     <string name="add_plan_title">添加</string>
     <string name="note_text">随记</string>
     <string name="content_hint">请输入内容</string>
+    <string name="add_plan_success_tip">添加成功</string>
 </resources>

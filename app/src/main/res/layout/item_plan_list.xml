@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="@drawable/square_theme_color_border_bg">
+
+    <View
+        android:layout_width="20dp"
+        android:layout_height="match_parent"
+        android:background="@color/theme_color" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/plan_icon"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@mipmap/item_icon"
+            android:tint="@color/theme_color"/>
+
+        <TextView
+            android:id="@+id/type_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:gravity="center_vertical"
+            android:layout_toRightOf="@id/plan_icon"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            tools:text="计划"/>
+
+        <TextView
+            android:id="@+id/time_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:gravity="center_vertical"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/gray"
+            android:textSize="12sp"
+            tools:text="2016-04-14 04:21"/>
+
+        <TextView
+            android:id="@+id/content_tv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/plan_icon"
+            android:layout_marginTop="6dp"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            tools:text="这是一个伟大的计划"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -24,6 +24,7 @@
                 android:orientation="vertical">
 
                 <RadioButton
+                    android:id="@+id/plan_rb"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:button="@drawable/item_selectbox_bg"
@@ -33,6 +34,7 @@
                     android:textSize="48px" />
 
                 <RadioButton
+                    android:id="@+id/note_rb"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:button="@drawable/item_selectbox_bg"

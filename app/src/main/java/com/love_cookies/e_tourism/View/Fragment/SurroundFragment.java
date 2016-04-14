@@ -1,7 +1,6 @@
 package com.love_cookies.e_tourism.View.Fragment;
 
 
-import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -12,8 +11,6 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
-import com.love_cookies.cookie_library.Adapter.CommonAdapter;
-import com.love_cookies.cookie_library.Adapter.CommonViewHolder;
 import com.love_cookies.cookie_library.Fragment.BaseFragment;
 import com.love_cookies.cookie_library.Widget.ListViewForScrollView;
 import com.love_cookies.cookie_library.Widget.LoadAndRefreshView;
@@ -25,6 +22,7 @@ import com.love_cookies.e_tourism.R;
 import com.love_cookies.e_tourism.Utils.LocationUtil;
 import com.love_cookies.e_tourism.Utils.WeatherImgUtil;
 import com.love_cookies.e_tourism.View.Activity.SurroundDetailActivity;
+import com.love_cookies.e_tourism.View.Adapter.SurroundAdapter;
 import com.love_cookies.e_tourism.View.Interface.ISurroundView;
 
 import org.xutils.view.annotation.ContentView;
@@ -194,22 +192,6 @@ public class SurroundFragment extends BaseFragment implements ISurroundView, Loa
                 }
             }
         }.sendEmptyMessageDelayed(0, duration);
-    }
-
-    /**
-     * 周边列表适配器
-     */
-    class SurroundAdapter extends CommonAdapter<SurroundBean.ResultsBean> {
-
-        public SurroundAdapter(Context context, List<SurroundBean.ResultsBean> datas) {
-            super(context, R.layout.item_surround_list, datas);
-        }
-
-        @Override
-        public void convert(CommonViewHolder commonViewHolder, SurroundBean.ResultsBean resultsBean) {
-            commonViewHolder.setText(R.id.surround_name, resultsBean.getName());
-            commonViewHolder.setText(R.id.surround_address, resultsBean.getAddress());
-        }
     }
 
 }
