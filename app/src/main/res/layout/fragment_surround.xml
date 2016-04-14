@@ -133,7 +133,9 @@
                 <com.love_cookies.cookie_library.Widget.ListViewForScrollView
                     android:id="@+id/surround_list"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:divider="@color/theme_color"
+                    android:dividerHeight="1px"/>
 
             </com.zhy.autolayout.AutoLinearLayout>
 
