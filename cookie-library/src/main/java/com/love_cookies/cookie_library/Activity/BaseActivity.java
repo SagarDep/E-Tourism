@@ -10,6 +10,8 @@ import com.love_cookies.cookie_library.Application.ActivityCollections;
 
 import org.xutils.x;
 
+import de.greenrobot.event.EventBus;
+
 /**
  * Created by xiekun on 2016/3/27.
  *
@@ -71,6 +73,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        EventBus.getDefault().unregister(this);
         ActivityCollections.getInstance().finishActivity(this);
     }
 

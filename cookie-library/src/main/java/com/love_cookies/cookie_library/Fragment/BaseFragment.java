@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 
 import org.xutils.x;
 
+import de.greenrobot.event.EventBus;
+
 /**
  * Created by xiekun on 2016/3/27.
  *
@@ -94,6 +96,7 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
     @Override
     public void onDestroy() {
         super.onDestroy();
+        EventBus.getDefault().unregister(this);
     }
 
     @Override
