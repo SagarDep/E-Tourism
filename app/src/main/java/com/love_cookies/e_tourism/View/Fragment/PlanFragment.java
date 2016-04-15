@@ -2,6 +2,8 @@ package com.love_cookies.e_tourism.View.Fragment;
 
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -32,7 +34,7 @@ import de.greenrobot.event.EventBus;
  * 计划 碎片
  */
 @ContentView(R.layout.fragment_plan)
-public class PlanFragment extends BaseFragment implements IPlanView {
+public class PlanFragment extends BaseFragment implements IPlanView, LoadAndRefreshView.OnHeaderRefreshListener, LoadAndRefreshView.OnFooterRefreshListener {
 
     @ViewInject(R.id.title_tv)
     TextView titleTV;
@@ -60,6 +62,8 @@ public class PlanFragment extends BaseFragment implements IPlanView {
         rightBtn.setImageResource(R.mipmap.title_btn_add);
         rightBtn.setOnClickListener(this);
         EventBus.getDefault().register(this);
+        loadAndRefreshView.setOnHeaderRefreshListener(this);
+        loadAndRefreshView.setOnFooterRefreshListener(this);
         getPlan(offset);
         planAdapter = new PlanAdapter(getActivity(), planDatas);
         planList.setAdapter(planAdapter);
@@ -87,6 +91,7 @@ public class PlanFragment extends BaseFragment implements IPlanView {
      */
     public void onEvent(AddPlanEvent addPlanEvent) {
         ToastUtils.show(getActivity(), R.string.add_plan_success_tip);
+        offset = 0;
         getPlan(offset);
     }
 
@@ -105,8 +110,50 @@ public class PlanFragment extends BaseFragment implements IPlanView {
      */
     @Override
     public void setPlan(List<PlanBean> plans) {
-        planDatas.clear();
+        if(offset == 0) {
+            planDatas.clear();
+        }
         planDatas.addAll(plans);
         planAdapter.notifyDataSetChanged();
+        onComplete();
     }
+
+    /**
+     * 上拉加载
+     * @param view
+     */
+    @Override
+    public void onFooterRefresh(LoadAndRefreshView view) {
+        getPlan(++offset);
+    }
+
+    /**
+     * 下拉刷新
+     * @param view
+     */
+    @Override
+    public void onHeaderRefresh(LoadAndRefreshView view) {
+        offset = 0;
+        getPlan(offset);
+    }
+
+    /**
+     * 下拉刷新&上拉加载完成
+     */
+    public void onComplete() {
+        //故意延迟3s
+        final int duration = 3000;
+        new Handler() {
+            @Override
+            public void handleMessage(Message msg) {
+                switch (msg.what) {
+                    case 0:
+                        loadAndRefreshView.onHeaderRefreshComplete();
+                        loadAndRefreshView.onFooterRefreshComplete();
+                        break;
+                }
+            }
+        }.sendEmptyMessageDelayed(0, duration);
+    }
+
 }
