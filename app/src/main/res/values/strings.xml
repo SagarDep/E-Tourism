@@ -50,4 +50,7 @@
     <string name="note_text">随记</string>
     <string name="content_hint">请输入内容</string>
     <string name="add_plan_success_tip">添加成功</string>
+
+    <string name="post_circle_title">发布</string>
+    <string name="post_circle_success_tip">发布成功</string>
 </resources>
