@@ -22,11 +22,11 @@ import org.xutils.view.annotation.ViewInject;
 public class CircleFragment extends BaseFragment {
 
     @ViewInject(R.id.title_tv)
-    TextView titleTV;
+    private TextView titleTV;
     @ViewInject(R.id.right_btn)
-    ImageView rightBtn;
+    private ImageView rightBtn;
     @ViewInject(R.id.load_and_refresh_view)
-    LoadAndRefreshView loadAndRefreshView;
+    private LoadAndRefreshView loadAndRefreshView;
 
     /**
      * 初始化控件

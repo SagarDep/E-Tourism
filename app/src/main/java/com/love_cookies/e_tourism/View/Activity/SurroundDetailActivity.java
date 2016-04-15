@@ -23,11 +23,11 @@ import org.xutils.view.annotation.ViewInject;
 public class SurroundDetailActivity extends BaseActivity {
 
     @ViewInject(R.id.title_tv)
-    TextView titleTV;
+    private TextView titleTV;
     @ViewInject(R.id.left_btn)
-    ImageView leftBtn;
+    private ImageView leftBtn;
     @ViewInject(R.id.web_view)
-    WebView webView;
+    private WebView webView;
 
     /**
      * 初始化控件

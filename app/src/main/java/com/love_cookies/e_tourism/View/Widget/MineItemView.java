@@ -16,7 +16,7 @@ import com.zhy.autolayout.AutoFrameLayout;
  */
 public class MineItemView extends AutoFrameLayout {
 
-    TextView itemTitle;
+    private TextView itemTitle;
 
     public MineItemView(Context context) {
         super(context);

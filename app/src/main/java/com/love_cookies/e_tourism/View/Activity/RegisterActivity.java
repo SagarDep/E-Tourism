@@ -26,19 +26,19 @@ import org.xutils.view.annotation.ViewInject;
 public class RegisterActivity extends BaseActivity implements IRegisterView {
 
     @ViewInject(R.id.title_tv)
-    TextView title;
+    private TextView title;
     @ViewInject(R.id.left_btn)
-    ImageView leftBtn;
+    private ImageView leftBtn;
     @ViewInject(R.id.username_et)
-    EditText usernameET;
+    private EditText usernameET;
     @ViewInject(R.id.password_et)
-    EditText passwordET;
+    private EditText passwordET;
     @ViewInject(R.id.nickname_et)
-    EditText nicknameET;
+    private EditText nicknameET;
     @ViewInject(R.id.register_btn)
-    TextView registerBtn;
+    private TextView registerBtn;
 
-    RegisterPresenter registerPresenter = new RegisterPresenter(this);
+    private RegisterPresenter registerPresenter = new RegisterPresenter(this);
 
     /**
      * 初始化控件

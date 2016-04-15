@@ -25,17 +25,17 @@ import org.xutils.view.annotation.ViewInject;
 public class LoginActivity extends BaseActivity implements ILoginView {
 
     @ViewInject(R.id.title_tv)
-    TextView titleTV;
+    private TextView titleTV;
     @ViewInject(R.id.username_et)
-    EditText usernameET;
+    private EditText usernameET;
     @ViewInject(R.id.password_et)
-    EditText passwordET;
+    private EditText passwordET;
     @ViewInject(R.id.login_btn)
-    TextView loginBtn;
+    private TextView loginBtn;
     @ViewInject(R.id.register_btn)
-    TextView registerBtn;
+    private TextView registerBtn;
 
-    LoginPresenter loginPresenter = new LoginPresenter(this);
+    private LoginPresenter loginPresenter = new LoginPresenter(this);
 
     /**
      * 初始化控件

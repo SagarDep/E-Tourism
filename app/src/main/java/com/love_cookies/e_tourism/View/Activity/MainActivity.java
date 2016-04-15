@@ -28,9 +28,9 @@ import java.util.List;
 public class MainActivity extends BaseActivity {
 
     @ViewInject(R.id.content_view)
-    NoScrollViewPager contentView;
+    private NoScrollViewPager contentView;
     @ViewInject(R.id.main_menu)
-    RadioGroup mainMenu;
+    private RadioGroup mainMenu;
 
     private int[] radioList = {R.id.surround_btn, R.id.plan_btn, R.id.circle_btn, R.id.mine_btn};
 

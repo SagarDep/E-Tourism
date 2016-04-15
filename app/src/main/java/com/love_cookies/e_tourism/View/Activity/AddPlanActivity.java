@@ -31,21 +31,21 @@ import de.greenrobot.event.EventBus;
 public class AddPlanActivity extends BaseActivity implements IAddPlanView {
 
     @ViewInject(R.id.title_tv)
-    TextView titleTV;
+    private TextView titleTV;
     @ViewInject(R.id.left_btn)
-    ImageView leftBtn;
+    private ImageView leftBtn;
     @ViewInject(R.id.right_btn)
-    ImageView rightBtn;
+    private ImageView rightBtn;
     @ViewInject(R.id.type_menu)
-    RadioGroup typeMenu;
+    private RadioGroup typeMenu;
     @ViewInject(R.id.content_et)
-    EditText contentET;
+    private EditText contentET;
 
     private int[] radioList = {R.id.plan_rb, R.id.note_rb};
     private String type;
     private String[] types = {"计划", "随记"};
 
-    AddPlanPresenter addPlanPresenter = new AddPlanPresenter(this);
+    private AddPlanPresenter addPlanPresenter = new AddPlanPresenter(this);
 
     /**
      * 初始化控件

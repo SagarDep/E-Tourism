@@ -28,15 +28,15 @@ import org.xutils.view.annotation.ViewInject;
 public class MineFragment extends BaseFragment implements IMineView {
 
     @ViewInject(R.id.title_tv)
-    TextView titleTV;
+    private TextView titleTV;
     @ViewInject(R.id.username_tv)
-    TextView usernameTV;
+    private TextView usernameTV;
     @ViewInject(R.id.reset_password_btn)
-    MineItemView resetPasswordBtn;
+    private MineItemView resetPasswordBtn;
     @ViewInject(R.id.logout_btn)
-    TextView logoutBtn;
+    private TextView logoutBtn;
 
-    MinePresenter minePresenter = new MinePresenter(this);
+    private MinePresenter minePresenter = new MinePresenter(this);
 
     /**
      * 初始化控件

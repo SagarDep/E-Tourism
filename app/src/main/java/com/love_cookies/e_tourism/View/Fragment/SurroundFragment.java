@@ -40,22 +40,22 @@ import java.util.List;
 public class SurroundFragment extends BaseFragment implements ISurroundView, LoadAndRefreshView.OnHeaderRefreshListener, LoadAndRefreshView.OnFooterRefreshListener {
 
     @ViewInject(R.id.title_tv)
-    TextView titleTV;
+    private TextView titleTV;
     @ViewInject(R.id.load_and_refresh_view)
-    LoadAndRefreshView loadAndRefreshView;
+    private LoadAndRefreshView loadAndRefreshView;
     @ViewInject(R.id.weather_iv)
-    ImageView weatherIV;
+    private ImageView weatherIV;
     @ViewInject(R.id.city_tv)
-    TextView cityTV;
+    private TextView cityTV;
     @ViewInject(R.id.info_tv)
-    TextView infoTV;
+    private TextView infoTV;
     @ViewInject(R.id.temperature_tv)
-    TextView temperatureTV;
+    private TextView temperatureTV;
 
     @ViewInject(R.id.surround_menu)
-    RadioGroup surroundMenu;
+    private RadioGroup surroundMenu;
     @ViewInject(R.id.surround_list)
-    ListViewForScrollView surroundList;
+    private ListViewForScrollView surroundList;
 
     private SurroundAdapter surroundAdapter;
     private List<SurroundBean.ResultsBean> surroundDatas = new ArrayList<>();
@@ -65,7 +65,7 @@ public class SurroundFragment extends BaseFragment implements ISurroundView, Loa
     private int[] radioList = {R.id.hotel_btn, R.id.mall_btn, R.id.food_btn, R.id.view_btn};
     private int[] keywords = {R.string.hotel_text, R.string.mall_text, R.string.food_text, R.string.view_text};
 
-    SurroundPresenter surroundPresenter = new SurroundPresenter(this);
+    private SurroundPresenter surroundPresenter = new SurroundPresenter(this);
 
     /**
      * 初始化控件

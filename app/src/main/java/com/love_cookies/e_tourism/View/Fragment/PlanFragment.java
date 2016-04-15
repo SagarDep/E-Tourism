@@ -37,15 +37,15 @@ import de.greenrobot.event.EventBus;
 public class PlanFragment extends BaseFragment implements IPlanView, LoadAndRefreshView.OnHeaderRefreshListener, LoadAndRefreshView.OnFooterRefreshListener {
 
     @ViewInject(R.id.title_tv)
-    TextView titleTV;
+    private TextView titleTV;
     @ViewInject(R.id.right_btn)
-    ImageView rightBtn;
+    private ImageView rightBtn;
     @ViewInject(R.id.load_and_refresh_view)
-    LoadAndRefreshView loadAndRefreshView;
+    private LoadAndRefreshView loadAndRefreshView;
     @ViewInject(R.id.plan_list)
-    ListView planList;
+    private ListView planList;
 
-    PlanPresenter planPresenter = new PlanPresenter(this);
+    private PlanPresenter planPresenter = new PlanPresenter(this);
 
     private PlanAdapter planAdapter;
     private List<PlanBean> planDatas = new ArrayList<>();

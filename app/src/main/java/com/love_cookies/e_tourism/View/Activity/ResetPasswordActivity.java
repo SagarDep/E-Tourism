@@ -27,17 +27,17 @@ import org.xutils.view.annotation.ViewInject;
 public class ResetPasswordActivity extends BaseActivity implements IResetPasswordView {
 
     @ViewInject(R.id.title_tv)
-    TextView titleTV;
+    private TextView titleTV;
     @ViewInject(R.id.left_btn)
-    ImageView leftBtn;
+    private ImageView leftBtn;
     @ViewInject(R.id.old_password_et)
-    EditText oldPasswordET;
+    private EditText oldPasswordET;
     @ViewInject(R.id.new_password_et)
-    EditText newPasswordET;
+    private EditText newPasswordET;
     @ViewInject(R.id.submit_btn)
-    TextView submitBtn;
+    private TextView submitBtn;
 
-    ResetPasswordPresenter resetPasswordPresenter = new ResetPasswordPresenter(this);
+    private ResetPasswordPresenter resetPasswordPresenter = new ResetPasswordPresenter(this);
 
     /**
      * 初始化控件

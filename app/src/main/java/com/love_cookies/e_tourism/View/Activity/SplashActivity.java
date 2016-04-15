@@ -24,13 +24,13 @@ import org.xutils.x;
 public class SplashActivity extends BaseActivity {
 
 	@ViewInject(R.id.splash_bg_iv)
-	ImageView splashBgIV;
+	private ImageView splashBgIV;
 
 	private final int SPLASH_DISPLAY_DURATION = 1500;//启动页显示时长
-	Looper looper = Looper.myLooper();
+	private Looper looper = Looper.myLooper();
 	private Handler handler = new Handler(looper);
 
-	Runnable runnable = new Runnable() {
+	private Runnable runnable = new Runnable() {
 		@Override
 		public void run() {
 			turnThenFinish(LoginActivity.class);
