@@ -16,6 +16,7 @@ import com.love_cookies.e_tourism.Event.PostCircleEvent;
 import com.love_cookies.e_tourism.Model.Bean.CircleBean;
 import com.love_cookies.e_tourism.Presenter.CirclePresenter;
 import com.love_cookies.e_tourism.R;
+import com.love_cookies.e_tourism.View.Activity.PostCircleActivity;
 import com.love_cookies.e_tourism.View.Adapter.CircleAdapter;
 import com.love_cookies.e_tourism.View.Interface.ICircleView;
 
@@ -76,6 +77,7 @@ public class CircleFragment extends BaseFragment implements ICircleView, LoadAnd
     public void widgetClick(View view) {
         switch (view.getId()) {
             case R.id.right_btn:
+                turn(PostCircleActivity.class);
                 break;
             default:
                 break;
@@ -84,7 +86,7 @@ public class CircleFragment extends BaseFragment implements ICircleView, LoadAnd
 
     /**
      * 添加计划事件
-     * from {@link com.love_cookies.e_tourism.View.Activity.???#???}
+     * from {@link PostCircleActivity#postSuccess()}
      * @param postCircleEvent
      */
     public void onEvent(PostCircleEvent postCircleEvent) {

@@ -5,30 +5,23 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.love_cookies.cookie_library.Activity.BaseActivity;
 import com.love_cookies.cookie_library.Utils.ProgressUtils;
 import com.love_cookies.cookie_library.Utils.ToastUtils;
-import com.love_cookies.e_tourism.Event.AddPlanEvent;
-import com.love_cookies.e_tourism.Presenter.AddPlanPresenter;
+import com.love_cookies.e_tourism.Event.PostCircleEvent;
+import com.love_cookies.e_tourism.Presenter.PostCirclePresenter;
 import com.love_cookies.e_tourism.R;
-import com.love_cookies.e_tourism.View.Interface.IAddPlanView;
+import com.love_cookies.e_tourism.View.Interface.IPostCircleView;
 
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.ViewInject;
 
 import de.greenrobot.event.EventBus;
 
-/**
- * Created by xiekun on 2016/4/14.
- *
- * 添加计划页
- */
-@ContentView(R.layout.activity_add_plan)
-public class AddPlanActivity extends BaseActivity implements IAddPlanView {
+@ContentView(R.layout.activity_post_circle)
+public class PostCircleActivity extends BaseActivity implements IPostCircleView {
 
     @ViewInject(R.id.title_tv)
     private TextView titleTV;
@@ -36,16 +29,14 @@ public class AddPlanActivity extends BaseActivity implements IAddPlanView {
     private ImageView leftBtn;
     @ViewInject(R.id.right_btn)
     private ImageView rightBtn;
-    @ViewInject(R.id.type_menu)
-    private RadioGroup typeMenu;
     @ViewInject(R.id.content_et)
     private EditText contentET;
+    @ViewInject(R.id.content_iv)
+    private ImageView contentIV;
 
-    private int[] radioList = {R.id.plan_rb, R.id.note_rb};
-    private String type;
-    private String[] types = {"计划", "随记"};
+    private String imgPath;
 
-    private AddPlanPresenter addPlanPresenter = new AddPlanPresenter(this);
+    private PostCirclePresenter postCirclePresenter = new PostCirclePresenter(this);
 
     /**
      * 初始化控件
@@ -53,26 +44,16 @@ public class AddPlanActivity extends BaseActivity implements IAddPlanView {
      */
     @Override
     public void initWidget(Bundle savedInstanceState) {
-        titleTV.setText(R.string.add_plan_title);
+        titleTV.setText(R.string.post_circle_title);
         leftBtn.setImageResource(R.mipmap.title_btn_back);
         leftBtn.setOnClickListener(this);
         rightBtn.setImageResource(R.mipmap.title_btn_publish);
         rightBtn.setOnClickListener(this);
-        typeMenu.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                for (int i_index = 0; i_index < radioList.length; i_index++) {
-                    if (radioList[i_index] == checkedId) {
-                        type = types[i_index];
-                    }
-                }
-            }
-        });
-        ((RadioButton)typeMenu.getChildAt(0)).setChecked(true);
+        contentIV.setOnClickListener(this);
     }
 
     /**
-     * 控件的点击事件
+     * 控件点击事件
      * @param view
      */
     @Override
@@ -82,7 +63,9 @@ public class AddPlanActivity extends BaseActivity implements IAddPlanView {
                 finish();
                 break;
             case R.id.right_btn:
-                doAddPlan();
+                doPost();
+                break;
+            case R.id.content_iv:
                 break;
             default:
                 break;
@@ -90,35 +73,43 @@ public class AddPlanActivity extends BaseActivity implements IAddPlanView {
     }
 
     /**
-     * 去添加计划
+     * 选择图片
      */
     @Override
-    public void doAddPlan() {
+    public void chooseImg() {
+
+    }
+
+    /**
+     * 去发布
+     */
+    @Override
+    public void doPost() {
         String content = contentET.getText().toString();
         if (TextUtils.isEmpty(content)) {
             ToastUtils.show(this, R.string.content_hint);
         } else {
             ProgressUtils.showProgress(this, R.string.wait_text);
-            addPlanPresenter.doAddPlan(type, content);
+            postCirclePresenter.doPost(content, imgPath);
         }
     }
 
     /**
-     * 添加成功
+     * 发布成功
      */
     @Override
-    public void addSuccess() {
+    public void postSuccess() {
         ProgressUtils.hideProgress();
-        EventBus.getDefault().post(new AddPlanEvent());
+        EventBus.getDefault().post(new PostCircleEvent());
         finish();
     }
 
     /**
-     * 添加失败
+     * 发布失败
      * @param msg
      */
     @Override
-    public void addFailed(String msg) {
+    public void postFailed(String msg) {
         ProgressUtils.hideProgress();
         ToastUtils.show(this, msg);
     }

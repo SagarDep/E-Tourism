@@ -86,7 +86,7 @@ public class PlanFragment extends BaseFragment implements IPlanView, LoadAndRefr
 
     /**
      * 添加计划事件
-     * from {@link com.love_cookies.e_tourism.View.Activity.AddPlanActivity#postSuccess}
+     * from {@link AddPlanActivity#addSuccess()}
      * @param addPlanEvent
      */
     public void onEvent(AddPlanEvent addPlanEvent) {

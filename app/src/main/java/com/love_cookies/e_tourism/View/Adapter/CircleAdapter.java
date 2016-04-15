@@ -1,6 +1,8 @@
 package com.love_cookies.e_tourism.View.Adapter;
 
 import android.content.Context;
+import android.text.TextUtils;
+import android.view.View;
 
 import com.love_cookies.cookie_library.Adapter.CommonAdapter;
 import com.love_cookies.cookie_library.Adapter.CommonViewHolder;
@@ -25,6 +27,11 @@ public class CircleAdapter extends CommonAdapter<CircleBean> {
         commonViewHolder.setText(R.id.nickname_tv, circleBean.getNickname());
         commonViewHolder.setText(R.id.time_tv, circleBean.getTime());
         commonViewHolder.setText(R.id.content_tv, circleBean.getContent());
-        commonViewHolder.setImage(R.id.content_iv, circleBean.getImg());
+        if(!TextUtils.isEmpty(circleBean.getImg())) {
+            commonViewHolder.getView(R.id.content_iv).setVisibility(View.VISIBLE);
+            commonViewHolder.setImage(R.id.content_iv, circleBean.getImg());
+        } else {
+            commonViewHolder.getView(R.id.content_iv).setVisibility(View.GONE);
+        }
     }
 }

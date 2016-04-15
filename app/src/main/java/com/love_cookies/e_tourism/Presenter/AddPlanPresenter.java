@@ -28,12 +28,12 @@ public class AddPlanPresenter {
         addPlanBiz.doAddPlan(type, content, new CallBack() {
             @Override
             public void onSuccess(Object result) {
-                iAddPlanView.postSuccess();
+                iAddPlanView.addSuccess();
             }
 
             @Override
             public void onFailed(Object msg) {
-                iAddPlanView.postFailed((String)msg);
+                iAddPlanView.addFailed((String)msg);
             }
         });
     }

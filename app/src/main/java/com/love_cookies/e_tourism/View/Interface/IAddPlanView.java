@@ -14,11 +14,11 @@ public interface IAddPlanView {
     /**
      * 添加成功
      */
-    void postSuccess();
+    void addSuccess();
 
     /**
      * 添加失败
      * @param msg
      */
-    void postFailed(String msg);
+    void addFailed(String msg);
 }
