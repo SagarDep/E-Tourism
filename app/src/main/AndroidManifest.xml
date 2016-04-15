@@ -2,8 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.love_cookies.e_tourism">
 
+    <!-- 网络权限 -->
     <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 写文件权限 -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 定位权限 -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
@@ -14,6 +17,7 @@
         android:supportsRtl="true"
         android:theme="@style/CookieTheme">
 
+        <!-- 设计稿尺寸 1920x1080 -->
         <meta-data
             android:name="design_width"
             android:value="1080" />
