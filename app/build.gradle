@@ -26,4 +26,5 @@ repositories {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile project(':cookie-library')
+    compile project(':multiimageselector')
 }

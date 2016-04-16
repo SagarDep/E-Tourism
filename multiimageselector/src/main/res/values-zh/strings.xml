@@ -1,0 +1,9 @@
+<resources>
+    <!--
+        <string name="app_name">美库2.1</string>
+    -->
+    <string name="folder_all">所有照片</string>
+    <string name="preview">预览</string>
+    <string name="msg_no_camera">没有系统相机</string>
+    <string name="msg_amount_limit">最多只能选择9张图片</string>
+</resources>
