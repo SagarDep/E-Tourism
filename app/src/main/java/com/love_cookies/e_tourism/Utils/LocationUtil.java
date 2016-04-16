@@ -59,14 +59,14 @@ public class LocationUtil {
         if (ActivityCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
                 && ActivityCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             ToastUtils.show(context, R.string.no_permissions_for_location);
-            //默认南京 TODO：经纬要改为仙鹤门
+            //默认南京-仙鹤门
             LocationBean locationBean = new LocationBean();
             LocationBean.ResultEntity resultEntity = new LocationBean.ResultEntity();
             LocationBean.ResultEntity.LocationEntity locationEntity = new LocationBean.ResultEntity.LocationEntity();
             LocationBean.ResultEntity.AddressComponentEntity addressComponentEntity = new LocationBean.ResultEntity.AddressComponentEntity();
             addressComponentEntity.setCity("南京");
-            locationEntity.setLat(31.903248);
-            locationEntity.setLng(118.784617);
+            locationEntity.setLat(32.088288);
+            locationEntity.setLng(118.893389);
             resultEntity.setLocation(locationEntity);
             resultEntity.setAddressComponent(addressComponentEntity);
             locationBean.setResult(resultEntity);
