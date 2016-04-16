@@ -28,9 +28,9 @@
     <string name="mine_text">我</string>
 
     <string name="hotel_text">酒店</string>
-    <string name="mall_text">商场</string>
+    <string name="mall_text">购物</string>
     <string name="food_text">美食</string>
-    <string name="view_text">景区</string>
+    <string name="view_text">景点</string>
 
     <string name="mine_item_update_password">修改密码</string>
     <string name="old_password_text">原密码：</string>

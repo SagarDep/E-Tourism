@@ -88,7 +88,7 @@
                         android:button="@null"
                         android:textColor="@drawable/main_menu_bg"
                         android:textSize="36px"
-                        android:text="酒店"
+                        android:text="@string/hotel_text"
                         android:background="@drawable/surround_menu_bg"/>
 
                     <RadioButton
@@ -100,7 +100,7 @@
                         android:button="@null"
                         android:textColor="@drawable/main_menu_bg"
                         android:textSize="36px"
-                        android:text="商场"
+                        android:text="@string/mall_text"
                         android:background="@drawable/surround_menu_bg"/>
 
                     <RadioButton
@@ -112,7 +112,7 @@
                         android:button="@null"
                         android:textColor="@drawable/main_menu_bg"
                         android:textSize="36px"
-                        android:text="美食"
+                        android:text="@string/food_text"
                         android:background="@drawable/surround_menu_bg"/>
 
                     <RadioButton
@@ -124,7 +124,7 @@
                         android:button="@null"
                         android:textColor="@drawable/main_menu_bg"
                         android:textSize="36px"
-                        android:text="景区"
+                        android:text="@string/view_text"
                         android:background="@drawable/surround_menu_bg"/>
 
                 </RadioGroup>
