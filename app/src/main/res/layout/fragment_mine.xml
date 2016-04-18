@@ -51,6 +51,12 @@
         android:layout_height="wrap_content"
         custom:Title="@string/mine_item_update_password" />
 
+    <com.love_cookies.e_tourism.View.Widget.MineItemView
+        android:id="@+id/version_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        custom:Title="@string/version_title" />
+
     <TextView
         android:id="@+id/logout_btn"
         android:layout_width="match_parent"

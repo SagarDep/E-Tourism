@@ -13,6 +13,7 @@ import com.love_cookies.e_tourism.Presenter.MinePresenter;
 import com.love_cookies.e_tourism.R;
 import com.love_cookies.e_tourism.View.Activity.LoginActivity;
 import com.love_cookies.e_tourism.View.Activity.ResetPasswordActivity;
+import com.love_cookies.e_tourism.View.Activity.VersionActivity;
 import com.love_cookies.e_tourism.View.Interface.IMineView;
 import com.love_cookies.e_tourism.View.Widget.MineItemView;
 
@@ -33,6 +34,8 @@ public class MineFragment extends BaseFragment implements IMineView {
     private TextView usernameTV;
     @ViewInject(R.id.reset_password_btn)
     private MineItemView resetPasswordBtn;
+    @ViewInject(R.id.version_btn)
+    private MineItemView versionBtn;
     @ViewInject(R.id.logout_btn)
     private TextView logoutBtn;
 
@@ -49,6 +52,7 @@ public class MineFragment extends BaseFragment implements IMineView {
         logoutBtn.setOnClickListener(this);
         usernameTV.setOnClickListener(this);
         resetPasswordBtn.setOnClickListener(this);
+        versionBtn.setOnClickListener(this);
     }
 
     /**
@@ -63,6 +67,9 @@ public class MineFragment extends BaseFragment implements IMineView {
                 break;
             case R.id.reset_password_btn:
                 turn(ResetPasswordActivity.class);
+                break;
+            case R.id.version_btn:
+                turn(VersionActivity.class);
                 break;
             case R.id.logout_btn:
                 doLogout();

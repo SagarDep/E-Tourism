@@ -56,6 +56,8 @@
 
         <activity android:name="me.nereo.multi_image_selector.MultiImageSelectorActivity"  />
 
+        <activity android:name=".View.Activity.VersionActivity" />
+
     </application>
 
 </manifest>

@@ -53,4 +53,6 @@
 
     <string name="post_circle_title">发布</string>
     <string name="post_circle_success_tip">发布成功</string>
+
+    <string name="version_title">版本信息</string>
 </resources>
