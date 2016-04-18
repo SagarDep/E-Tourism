@@ -1,7 +1,6 @@
 package com.love_cookies.e_tourism.Model.Biz;
 
 import android.content.Context;
-import android.util.Log;
 
 import com.love_cookies.cookie_library.Application.ActivityCollections;
 import com.love_cookies.cookie_library.Interface.CallBack;
@@ -58,7 +57,7 @@ public class PostCircleBiz implements IPostCircleBiz {
 
             @Override
             public void onProgress(Integer value) {
-                Log.e("UpLoad-Progress======>", value + "");
+
             }
 
             @Override
