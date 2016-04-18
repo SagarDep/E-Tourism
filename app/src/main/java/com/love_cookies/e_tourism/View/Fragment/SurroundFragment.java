@@ -77,6 +77,8 @@ public class SurroundFragment extends BaseFragment implements ISurroundView, Loa
         getWeather(LocationUtil.getInstance().locationBean.getResult().getAddressComponent().getCity());
         loadAndRefreshView.setOnHeaderRefreshListener(this);
         loadAndRefreshView.setOnFooterRefreshListener(this);
+        surroundAdapter = new SurroundAdapter(getActivity(), surroundDatas);
+        surroundList.setAdapter(surroundAdapter);
         surroundMenu.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -89,8 +91,6 @@ public class SurroundFragment extends BaseFragment implements ISurroundView, Loa
             }
         });
         ((RadioButton)surroundMenu.getChildAt(0)).setChecked(true);
-        surroundAdapter = new SurroundAdapter(getActivity(), surroundDatas);
-        surroundList.setAdapter(surroundAdapter);
         surroundList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

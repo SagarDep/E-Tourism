@@ -64,9 +64,9 @@ public class CircleFragment extends BaseFragment implements ICircleView, LoadAnd
         EventBus.getDefault().register(this);
         loadAndRefreshView.setOnHeaderRefreshListener(this);
         loadAndRefreshView.setOnFooterRefreshListener(this);
-        getCircle(offset);
         circleAdapter = new CircleAdapter(getActivity(), circleDatas);
         circleList.setAdapter(circleAdapter);
+        getCircle(offset);
     }
 
     /**

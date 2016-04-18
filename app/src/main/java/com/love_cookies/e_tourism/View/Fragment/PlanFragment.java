@@ -64,9 +64,9 @@ public class PlanFragment extends BaseFragment implements IPlanView, LoadAndRefr
         EventBus.getDefault().register(this);
         loadAndRefreshView.setOnHeaderRefreshListener(this);
         loadAndRefreshView.setOnFooterRefreshListener(this);
-        getPlan(offset);
         planAdapter = new PlanAdapter(getActivity(), planDatas);
         planList.setAdapter(planAdapter);
+        getPlan(offset);
     }
 
     /**
