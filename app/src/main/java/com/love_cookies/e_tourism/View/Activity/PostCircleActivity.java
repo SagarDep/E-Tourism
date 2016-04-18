@@ -108,7 +108,7 @@ public class PostCircleActivity extends BaseActivity implements IPostCircleView 
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode == CHOOSE_IMAGE && resultCode == RESULT_OK){
             List<String> path = data.getStringArrayListExtra(MultiImageSelectorActivity.EXTRA_RESULT);
-            imgPath = PicCompressUtil.save(path.get(0));
+            imgPath = PicCompressUtil.getInstance("E-Tourism").save(path.get(0));
             x.image().bind(contentIV, "file://" + imgPath, new ImageOptions.Builder().setFadeIn(true).build());
         }
     }

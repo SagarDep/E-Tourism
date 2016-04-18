@@ -14,6 +14,23 @@ import java.io.FileOutputStream;
  * 图片压缩工具类
  */
 public class PicCompressUtil {
+
+    private static PicCompressUtil instance;
+    private static String mDir;//文件夹名称
+
+    /**
+     * DateTimeUtil
+     *
+     * @return DateTimeUtil
+     */
+    public static PicCompressUtil getInstance(String dir) {
+        if (instance == null) {
+            instance = new PicCompressUtil();
+        }
+        mDir = dir;
+        return instance;
+    }
+
     /**
      * 计算图片的缩放值
      *
@@ -40,7 +57,7 @@ public class PicCompressUtil {
      * @param filePath
      * @return
      */
-    public static Bitmap getSmallBitmap(String filePath) {
+    public Bitmap getSmallBitmap(String filePath) {
         final BitmapFactory.Options options = new BitmapFactory.Options();
         options.inJustDecodeBounds = true;
         BitmapFactory.decodeFile(filePath, options);
@@ -54,8 +71,8 @@ public class PicCompressUtil {
      *
      * @return
      */
-    public static File getAlbumDir() {
-        File dir = new File("/mnt/sdcard/E-Tourism/uploadPhoto/");
+    public File getAlbumDir() {
+        File dir = new File("/mnt/sdcard/" + mDir + "/uploadPhoto/");
         if (!dir.exists()) {
             dir.mkdirs();
         }
@@ -67,13 +84,13 @@ public class PicCompressUtil {
      * @param path
      * @return
      */
-    public static String save(String path) {
+    public String save(String path) {
         String newPath = "";
         try {
             File f = new File(path);
-            newPath = PicCompressUtil.getAlbumDir() + "/" + f.getName();
+            newPath = getAlbumDir() + "/" + f.getName();
 
-            Bitmap bm = PicCompressUtil.getSmallBitmap(path);
+            Bitmap bm = getSmallBitmap(path);
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
             bm.compress(Bitmap.CompressFormat.JPEG, 100, baos);
             FileOutputStream fos = new FileOutputStream(new File(newPath));
