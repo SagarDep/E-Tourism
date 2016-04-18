@@ -14,6 +14,7 @@ import com.love_cookies.cookie_library.Utils.ToastUtils;
 import com.love_cookies.e_tourism.Event.PostCircleEvent;
 import com.love_cookies.e_tourism.Presenter.PostCirclePresenter;
 import com.love_cookies.e_tourism.R;
+import com.love_cookies.e_tourism.Utils.PicCompressUtil;
 import com.love_cookies.e_tourism.View.Interface.IPostCircleView;
 
 import org.xutils.image.ImageOptions;
@@ -107,7 +108,7 @@ public class PostCircleActivity extends BaseActivity implements IPostCircleView 
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode == CHOOSE_IMAGE && resultCode == RESULT_OK){
             List<String> path = data.getStringArrayListExtra(MultiImageSelectorActivity.EXTRA_RESULT);
-            imgPath = path.get(0);
+            imgPath = PicCompressUtil.save(path.get(0));
             x.image().bind(contentIV, "file://" + imgPath, new ImageOptions.Builder().setFadeIn(true).build());
         }
     }
