@@ -1,6 +1,5 @@
 package com.love_cookies.e_tourism.Model.Biz.Interface;
 
-import com.love_cookies.cookie_library.Interface.CallBack;
 import com.love_cookies.e_tourism.Model.Bean.LocationBean;
 
 /**

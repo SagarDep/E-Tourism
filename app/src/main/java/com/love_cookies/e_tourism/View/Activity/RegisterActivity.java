@@ -6,10 +6,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.love_cookies.cookie_library.Activity.BaseActivity;
-import com.love_cookies.cookie_library.Utils.ProgressUtils;
-import com.love_cookies.cookie_library.Utils.ToastUtils;
+import com.love_cookies.e_tourism.E_TourismApplication;
 import com.love_cookies.e_tourism.Presenter.RegisterPresenter;
 import com.love_cookies.e_tourism.R;
 import com.love_cookies.e_tourism.View.Interface.IRegisterView;
@@ -79,13 +78,13 @@ public class RegisterActivity extends BaseActivity implements IRegisterView {
         String password = passwordET.getText().toString();
         String nickname = nicknameET.getText().toString();
         if (TextUtils.isEmpty(username)) {
-            ToastUtils.show(this, R.string.username_text_hint);
+            Toast.makeText(this, R.string.username_text_hint, Toast.LENGTH_SHORT).show();
         } else if (TextUtils.isEmpty(password)) {
-            ToastUtils.show(this, R.string.password_text_hint);
+            Toast.makeText(this, R.string.password_text_hint, Toast.LENGTH_SHORT).show();
         } else if (TextUtils.isEmpty(nickname)) {
-            ToastUtils.show(this, R.string.nickname_text_hint);
+            Toast.makeText(this, R.string.nickname_text_hint, Toast.LENGTH_SHORT).show();
         } else {
-            ProgressUtils.showProgress(this, R.string.wait_text);
+            E_TourismApplication.showProgress(this, R.string.wait_text);
             registerPresenter.doRegister(username, password, nickname);
         }
     }
@@ -95,8 +94,8 @@ public class RegisterActivity extends BaseActivity implements IRegisterView {
      */
     @Override
     public void turnToLogin() {
-        ProgressUtils.hideProgress();
-        ToastUtils.show(this, R.string.register_success_text);
+        E_TourismApplication.hideProgress();
+        Toast.makeText(this, R.string.register_success_text, Toast.LENGTH_SHORT).show();
         finish();
     }
 
@@ -106,7 +105,7 @@ public class RegisterActivity extends BaseActivity implements IRegisterView {
      */
     @Override
     public void registerFailed(String msg) {
-        ProgressUtils.hideProgress();
-        ToastUtils.show(this, msg);
+        E_TourismApplication.hideProgress();
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }
 }

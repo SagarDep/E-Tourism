@@ -1,6 +1,5 @@
 package com.love_cookies.e_tourism.View.Fragment;
 
-
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -8,10 +7,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.love_cookies.cookie_library.Fragment.BaseFragment;
-import com.love_cookies.cookie_library.Utils.ToastUtils;
-import com.love_cookies.cookie_library.Widget.LoadAndRefreshView;
 import com.love_cookies.e_tourism.Event.PostCircleEvent;
 import com.love_cookies.e_tourism.Model.Bean.CircleBean;
 import com.love_cookies.e_tourism.Presenter.CirclePresenter;
@@ -19,6 +16,7 @@ import com.love_cookies.e_tourism.R;
 import com.love_cookies.e_tourism.View.Activity.PostCircleActivity;
 import com.love_cookies.e_tourism.View.Adapter.CircleAdapter;
 import com.love_cookies.e_tourism.View.Interface.ICircleView;
+import com.love_cookies.e_tourism.View.Widget.PullView;
 
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.ViewInject;
@@ -34,14 +32,14 @@ import de.greenrobot.event.EventBus;
  * 动态圈 碎片
  */
 @ContentView(R.layout.fragment_circle)
-public class CircleFragment extends BaseFragment implements ICircleView, LoadAndRefreshView.OnHeaderRefreshListener, LoadAndRefreshView.OnFooterRefreshListener {
+public class CircleFragment extends BaseFragment implements ICircleView, PullView.OnHeaderRefreshListener, PullView.OnFooterRefreshListener {
 
     @ViewInject(R.id.title_tv)
     private TextView titleTV;
     @ViewInject(R.id.right_btn)
     private ImageView rightBtn;
     @ViewInject(R.id.load_and_refresh_view)
-    private LoadAndRefreshView loadAndRefreshView;
+    private PullView pullView;
     @ViewInject(R.id.circle_list)
     private ListView circleList;
 
@@ -62,8 +60,8 @@ public class CircleFragment extends BaseFragment implements ICircleView, LoadAnd
         rightBtn.setImageResource(R.mipmap.title_btn_publish);
         rightBtn.setOnClickListener(this);
         EventBus.getDefault().register(this);
-        loadAndRefreshView.setOnHeaderRefreshListener(this);
-        loadAndRefreshView.setOnFooterRefreshListener(this);
+        pullView.setOnHeaderRefreshListener(this);
+        pullView.setOnFooterRefreshListener(this);
         circleAdapter = new CircleAdapter(getActivity(), circleDatas);
         circleList.setAdapter(circleAdapter);
         getCircle(offset);
@@ -90,7 +88,7 @@ public class CircleFragment extends BaseFragment implements ICircleView, LoadAnd
      * @param postCircleEvent
      */
     public void onEvent(PostCircleEvent postCircleEvent) {
-        ToastUtils.show(getActivity(), R.string.post_circle_success_tip);
+        Toast.makeText(getActivity(), R.string.post_circle_success_tip, Toast.LENGTH_SHORT).show();
         offset = 0;
         getCircle(offset);
     }
@@ -123,7 +121,7 @@ public class CircleFragment extends BaseFragment implements ICircleView, LoadAnd
      * @param view
      */
     @Override
-    public void onFooterRefresh(LoadAndRefreshView view) {
+    public void onFooterRefresh(PullView view) {
         getCircle(++offset);
     }
 
@@ -132,7 +130,7 @@ public class CircleFragment extends BaseFragment implements ICircleView, LoadAnd
      * @param view
      */
     @Override
-    public void onHeaderRefresh(LoadAndRefreshView view) {
+    public void onHeaderRefresh(PullView view) {
         offset = 0;
         getCircle(offset);
     }
@@ -148,8 +146,8 @@ public class CircleFragment extends BaseFragment implements ICircleView, LoadAnd
             public void handleMessage(Message msg) {
                 switch (msg.what) {
                     case 0:
-                        loadAndRefreshView.onHeaderRefreshComplete();
-                        loadAndRefreshView.onFooterRefreshComplete();
+                        pullView.onHeaderRefreshComplete();
+                        pullView.onFooterRefreshComplete();
                         break;
                 }
             }

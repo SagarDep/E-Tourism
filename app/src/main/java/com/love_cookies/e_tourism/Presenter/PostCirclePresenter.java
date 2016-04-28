@@ -1,6 +1,6 @@
 package com.love_cookies.e_tourism.Presenter;
 
-import com.love_cookies.cookie_library.Interface.CallBack;
+import com.love_cookies.e_tourism.Model.Biz.Interface.CallBack;
 import com.love_cookies.e_tourism.Model.Biz.PostCircleBiz;
 import com.love_cookies.e_tourism.View.Interface.IPostCircleView;
 

@@ -1,1 +1,1 @@
-include ':app', ':cookie-library', ':multiimageselector'
+include ':app', ':multiimageselector'

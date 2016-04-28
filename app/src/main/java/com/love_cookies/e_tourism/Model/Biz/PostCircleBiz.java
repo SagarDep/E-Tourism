@@ -2,10 +2,10 @@ package com.love_cookies.e_tourism.Model.Biz;
 
 import android.content.Context;
 
-import com.love_cookies.cookie_library.Application.ActivityCollections;
-import com.love_cookies.cookie_library.Interface.CallBack;
+import com.love_cookies.e_tourism.ActivityCollections;
 import com.love_cookies.e_tourism.Model.Bean.CircleBean;
 import com.love_cookies.e_tourism.Model.Bean.UserBean;
+import com.love_cookies.e_tourism.Model.Biz.Interface.CallBack;
 import com.love_cookies.e_tourism.Model.Biz.Interface.IPostCircleBiz;
 import com.love_cookies.e_tourism.Utils.DateTimeUtil;
 

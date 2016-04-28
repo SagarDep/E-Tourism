@@ -1,8 +1,8 @@
 package com.love_cookies.e_tourism.Model.Biz;
 
-import com.love_cookies.cookie_library.Application.ActivityCollections;
-import com.love_cookies.cookie_library.Interface.CallBack;
+import com.love_cookies.e_tourism.ActivityCollections;
 import com.love_cookies.e_tourism.Model.Bean.CircleBean;
+import com.love_cookies.e_tourism.Model.Biz.Interface.CallBack;
 import com.love_cookies.e_tourism.Model.Biz.Interface.ICircleBiz;
 
 import java.util.List;

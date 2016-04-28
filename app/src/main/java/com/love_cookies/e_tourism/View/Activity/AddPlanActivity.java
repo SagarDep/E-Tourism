@@ -8,10 +8,9 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.love_cookies.cookie_library.Activity.BaseActivity;
-import com.love_cookies.cookie_library.Utils.ProgressUtils;
-import com.love_cookies.cookie_library.Utils.ToastUtils;
+import com.love_cookies.e_tourism.E_TourismApplication;
 import com.love_cookies.e_tourism.Event.AddPlanEvent;
 import com.love_cookies.e_tourism.Presenter.AddPlanPresenter;
 import com.love_cookies.e_tourism.R;
@@ -96,9 +95,9 @@ public class AddPlanActivity extends BaseActivity implements IAddPlanView {
     public void doAddPlan() {
         String content = contentET.getText().toString();
         if (TextUtils.isEmpty(content)) {
-            ToastUtils.show(this, R.string.content_hint);
+            Toast.makeText(this, R.string.content_hint, Toast.LENGTH_SHORT).show();
         } else {
-            ProgressUtils.showProgress(this, R.string.wait_text);
+            E_TourismApplication.showProgress(this, R.string.wait_text);
             addPlanPresenter.doAddPlan(type, content);
         }
     }
@@ -108,7 +107,7 @@ public class AddPlanActivity extends BaseActivity implements IAddPlanView {
      */
     @Override
     public void addSuccess() {
-        ProgressUtils.hideProgress();
+        E_TourismApplication.hideProgress();
         EventBus.getDefault().post(new AddPlanEvent());
         finish();
     }
@@ -119,7 +118,7 @@ public class AddPlanActivity extends BaseActivity implements IAddPlanView {
      */
     @Override
     public void addFailed(String msg) {
-        ProgressUtils.hideProgress();
-        ToastUtils.show(this, msg);
+        E_TourismApplication.hideProgress();
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }
 }

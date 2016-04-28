@@ -8,9 +8,9 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
-import com.love_cookies.cookie_library.Utils.ToastUtils;
 import com.love_cookies.e_tourism.Config.AppConfig;
 import com.love_cookies.e_tourism.Model.Bean.LocationBean;
 import com.love_cookies.e_tourism.R;
@@ -58,7 +58,7 @@ public class LocationUtil {
 
         if (ActivityCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
                 && ActivityCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            ToastUtils.show(context, R.string.no_permissions_for_location);
+            Toast.makeText(context, R.string.no_permissions_for_location, Toast.LENGTH_SHORT).show();
             //默认南京-仙鹤门
             LocationBean locationBean = new LocationBean();
             LocationBean.ResultEntity resultEntity = new LocationBean.ResultEntity();

@@ -3,19 +3,17 @@ package com.love_cookies.e_tourism.View.Fragment;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.love_cookies.cookie_library.Application.ActivityCollections;
-import com.love_cookies.cookie_library.Fragment.BaseFragment;
-import com.love_cookies.cookie_library.Utils.ToastUtils;
+import com.love_cookies.e_tourism.ActivityCollections;
 import com.love_cookies.e_tourism.Model.Bean.UserBean;
 import com.love_cookies.e_tourism.Presenter.MinePresenter;
 import com.love_cookies.e_tourism.R;
 import com.love_cookies.e_tourism.View.Activity.LoginActivity;
 import com.love_cookies.e_tourism.View.Activity.ResetPasswordActivity;
-import com.love_cookies.e_tourism.View.Activity.VersionActivity;
 import com.love_cookies.e_tourism.View.Interface.IMineView;
-import com.love_cookies.e_tourism.View.Widget.MineItemView;
 
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.ViewInject;
@@ -33,9 +31,7 @@ public class MineFragment extends BaseFragment implements IMineView {
     @ViewInject(R.id.username_tv)
     private TextView usernameTV;
     @ViewInject(R.id.reset_password_btn)
-    private MineItemView resetPasswordBtn;
-    @ViewInject(R.id.version_btn)
-    private MineItemView versionBtn;
+    private LinearLayout resetPasswordBtn;
     @ViewInject(R.id.logout_btn)
     private TextView logoutBtn;
 
@@ -52,7 +48,6 @@ public class MineFragment extends BaseFragment implements IMineView {
         logoutBtn.setOnClickListener(this);
         usernameTV.setOnClickListener(this);
         resetPasswordBtn.setOnClickListener(this);
-        versionBtn.setOnClickListener(this);
     }
 
     /**
@@ -63,13 +58,10 @@ public class MineFragment extends BaseFragment implements IMineView {
     public void widgetClick(View view) {
         switch (view.getId()) {
             case R.id.username_tv:
-                ToastUtils.show(getActivity(), usernameTV.getText().toString());
+                Toast.makeText(getActivity(), usernameTV.getText().toString(), Toast.LENGTH_SHORT).show();
                 break;
             case R.id.reset_password_btn:
                 turn(ResetPasswordActivity.class);
-                break;
-            case R.id.version_btn:
-                turn(VersionActivity.class);
                 break;
             case R.id.logout_btn:
                 doLogout();

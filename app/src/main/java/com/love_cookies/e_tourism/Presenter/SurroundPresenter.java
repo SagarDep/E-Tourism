@@ -1,9 +1,9 @@
 package com.love_cookies.e_tourism.Presenter;
 
-import com.love_cookies.cookie_library.Interface.CallBack;
 import com.love_cookies.e_tourism.Model.Bean.LocationBean;
 import com.love_cookies.e_tourism.Model.Bean.SurroundBean;
 import com.love_cookies.e_tourism.Model.Bean.WeatherBean;
+import com.love_cookies.e_tourism.Model.Biz.Interface.CallBack;
 import com.love_cookies.e_tourism.Model.Biz.SurroundBiz;
 import com.love_cookies.e_tourism.View.Interface.ISurroundView;
 

@@ -6,17 +6,16 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
-import com.love_cookies.cookie_library.Activity.BaseActivity;
-import com.love_cookies.cookie_library.Application.ActivityCollections;
-import com.love_cookies.cookie_library.Utils.ToastUtils;
-import com.love_cookies.cookie_library.Widget.NoScrollViewPager;
+import com.love_cookies.e_tourism.ActivityCollections;
 import com.love_cookies.e_tourism.R;
 import com.love_cookies.e_tourism.View.Adapter.MainPageAdapter;
 import com.love_cookies.e_tourism.View.Fragment.CircleFragment;
 import com.love_cookies.e_tourism.View.Fragment.MineFragment;
 import com.love_cookies.e_tourism.View.Fragment.PlanFragment;
 import com.love_cookies.e_tourism.View.Fragment.SurroundFragment;
+import com.love_cookies.e_tourism.View.Widget.MyViewPager;
 
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.ViewInject;
@@ -28,7 +27,7 @@ import java.util.List;
 public class MainActivity extends BaseActivity {
 
     @ViewInject(R.id.content_view)
-    private NoScrollViewPager contentView;
+    private MyViewPager contentView;
     @ViewInject(R.id.main_menu)
     private RadioGroup mainMenu;
 
@@ -85,7 +84,7 @@ public class MainActivity extends BaseActivity {
         if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN) {
             if ((System.currentTimeMillis() - exitTime) > 2000)
             {
-                ToastUtils.show(getApplicationContext(), R.string.exit_tip);
+                Toast.makeText(this, R.string.exit_tip, Toast.LENGTH_SHORT).show();
                 exitTime = System.currentTimeMillis();
             } else {
                 ActivityCollections.getInstance().finishAllActivity();

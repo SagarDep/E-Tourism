@@ -6,11 +6,10 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.love_cookies.cookie_library.Activity.BaseActivity;
-import com.love_cookies.cookie_library.Application.ActivityCollections;
-import com.love_cookies.cookie_library.Utils.ProgressUtils;
-import com.love_cookies.cookie_library.Utils.ToastUtils;
+import com.love_cookies.e_tourism.ActivityCollections;
+import com.love_cookies.e_tourism.E_TourismApplication;
 import com.love_cookies.e_tourism.Presenter.ResetPasswordPresenter;
 import com.love_cookies.e_tourism.R;
 import com.love_cookies.e_tourism.View.Interface.IResetPasswordView;
@@ -77,11 +76,11 @@ public class ResetPasswordActivity extends BaseActivity implements IResetPasswor
         String oldPassword = oldPasswordET.getText().toString();
         String newPassword = newPasswordET.getText().toString();
         if (TextUtils.isEmpty(oldPassword)) {
-            ToastUtils.show(this, R.string.old_password_text_hint);
+            Toast.makeText(this, R.string.old_password_text_hint, Toast.LENGTH_SHORT).show();
         } else if(TextUtils.isEmpty(newPassword)) {
-            ToastUtils.show(this, R.string.new_password_text_hint);
+            Toast.makeText(this, R.string.new_password_text_hint, Toast.LENGTH_SHORT).show();
         } else {
-            ProgressUtils.showProgress(this, R.string.wait_text);
+            E_TourismApplication.showProgress(this, R.string.wait_text);
             resetPasswordPresenter.doResetPassword(oldPassword, newPassword);
         }
     }
@@ -92,8 +91,8 @@ public class ResetPasswordActivity extends BaseActivity implements IResetPasswor
      */
     @Override
     public void resetFailed(String msg) {
-        ProgressUtils.hideProgress();
-        ToastUtils.show(this, msg);
+        E_TourismApplication.hideProgress();
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }
 
     /**
@@ -101,7 +100,7 @@ public class ResetPasswordActivity extends BaseActivity implements IResetPasswor
      */
     @Override
     public void turnToLogin() {
-        ToastUtils.show(this, R.string.reset_password_success_tip);
+        Toast.makeText(this, R.string.reset_password_success_tip, Toast.LENGTH_SHORT).show();
         turn(LoginActivity.class);
         ActivityCollections.getInstance().finishAllActivity();
     }

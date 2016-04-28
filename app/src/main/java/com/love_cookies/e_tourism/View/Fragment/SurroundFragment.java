@@ -11,9 +11,6 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
-import com.love_cookies.cookie_library.Fragment.BaseFragment;
-import com.love_cookies.cookie_library.Widget.ListViewForScrollView;
-import com.love_cookies.cookie_library.Widget.LoadAndRefreshView;
 import com.love_cookies.e_tourism.Model.Bean.LocationBean;
 import com.love_cookies.e_tourism.Model.Bean.SurroundBean;
 import com.love_cookies.e_tourism.Model.Bean.WeatherBean;
@@ -24,6 +21,8 @@ import com.love_cookies.e_tourism.Utils.WeatherImgUtil;
 import com.love_cookies.e_tourism.View.Activity.SurroundDetailActivity;
 import com.love_cookies.e_tourism.View.Adapter.SurroundAdapter;
 import com.love_cookies.e_tourism.View.Interface.ISurroundView;
+import com.love_cookies.e_tourism.View.Widget.MyListView;
+import com.love_cookies.e_tourism.View.Widget.PullView;
 
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.ViewInject;
@@ -37,12 +36,12 @@ import java.util.List;
  * 周边 碎片
  */
 @ContentView(R.layout.fragment_surround)
-public class SurroundFragment extends BaseFragment implements ISurroundView, LoadAndRefreshView.OnHeaderRefreshListener, LoadAndRefreshView.OnFooterRefreshListener {
+public class SurroundFragment extends BaseFragment implements ISurroundView, PullView.OnHeaderRefreshListener, PullView.OnFooterRefreshListener {
 
     @ViewInject(R.id.title_tv)
     private TextView titleTV;
     @ViewInject(R.id.load_and_refresh_view)
-    private LoadAndRefreshView loadAndRefreshView;
+    private PullView pullView;
     @ViewInject(R.id.weather_iv)
     private ImageView weatherIV;
     @ViewInject(R.id.city_tv)
@@ -55,7 +54,7 @@ public class SurroundFragment extends BaseFragment implements ISurroundView, Loa
     @ViewInject(R.id.surround_menu)
     private RadioGroup surroundMenu;
     @ViewInject(R.id.surround_list)
-    private ListViewForScrollView surroundList;
+    private MyListView surroundList;
 
     private SurroundAdapter surroundAdapter;
     private List<SurroundBean.ResultsBean> surroundDatas = new ArrayList<>();
@@ -75,8 +74,8 @@ public class SurroundFragment extends BaseFragment implements ISurroundView, Loa
     public void initWidget(Bundle savedInstanceState) {
         titleTV.setText(R.string.surround_text);
         getWeather(LocationUtil.getInstance().locationBean.getResult().getAddressComponent().getCity());
-        loadAndRefreshView.setOnHeaderRefreshListener(this);
-        loadAndRefreshView.setOnFooterRefreshListener(this);
+        pullView.setOnHeaderRefreshListener(this);
+        pullView.setOnFooterRefreshListener(this);
         surroundAdapter = new SurroundAdapter(getActivity(), surroundDatas);
         surroundList.setAdapter(surroundAdapter);
         surroundMenu.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -161,7 +160,7 @@ public class SurroundFragment extends BaseFragment implements ISurroundView, Loa
      * @param view
      */
     @Override
-    public void onFooterRefresh(LoadAndRefreshView view) {
+    public void onFooterRefresh(PullView view) {
         getSurround(LocationUtil.getInstance().locationBean, keyword);
     }
 
@@ -170,7 +169,7 @@ public class SurroundFragment extends BaseFragment implements ISurroundView, Loa
      * @param view
      */
     @Override
-    public void onHeaderRefresh(LoadAndRefreshView view) {
+    public void onHeaderRefresh(PullView view) {
         getWeather(LocationUtil.getInstance().locationBean.getResult().getAddressComponent().getCity());
         getSurround(LocationUtil.getInstance().locationBean, keyword);
     }
@@ -186,8 +185,8 @@ public class SurroundFragment extends BaseFragment implements ISurroundView, Loa
             public void handleMessage(Message msg) {
                 switch (msg.what) {
                     case 0:
-                        loadAndRefreshView.onHeaderRefreshComplete();
-                        loadAndRefreshView.onFooterRefreshComplete();
+                        pullView.onHeaderRefreshComplete();
+                        pullView.onFooterRefreshComplete();
                         break;
                 }
             }

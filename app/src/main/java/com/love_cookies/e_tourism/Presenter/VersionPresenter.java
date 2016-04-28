@@ -2,9 +2,9 @@ package com.love_cookies.e_tourism.Presenter;
 
 import android.content.Context;
 
-import com.love_cookies.cookie_library.Interface.CallBack;
 import com.love_cookies.e_tourism.Model.Bean.ChangeLogBean;
 import com.love_cookies.e_tourism.Model.Biz.ChangeLogBiz;
+import com.love_cookies.e_tourism.Model.Biz.Interface.CallBack;
 import com.love_cookies.e_tourism.View.Interface.IVersion;
 
 

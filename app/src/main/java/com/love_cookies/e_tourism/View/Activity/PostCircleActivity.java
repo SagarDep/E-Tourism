@@ -7,10 +7,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.love_cookies.cookie_library.Activity.BaseActivity;
-import com.love_cookies.cookie_library.Utils.ProgressUtils;
-import com.love_cookies.cookie_library.Utils.ToastUtils;
+import com.love_cookies.e_tourism.E_TourismApplication;
 import com.love_cookies.e_tourism.Event.PostCircleEvent;
 import com.love_cookies.e_tourism.Presenter.PostCirclePresenter;
 import com.love_cookies.e_tourism.R;
@@ -120,9 +119,9 @@ public class PostCircleActivity extends BaseActivity implements IPostCircleView 
     public void doPost() {
         String content = contentET.getText().toString();
         if (TextUtils.isEmpty(content)) {
-            ToastUtils.show(this, R.string.content_hint);
+            Toast.makeText(this, R.string.content_hint, Toast.LENGTH_SHORT).show();
         } else {
-            ProgressUtils.showProgress(this, R.string.wait_text);
+            E_TourismApplication.showProgress(this, R.string.wait_text);
             postCirclePresenter.doPost(content, imgPath);
         }
     }
@@ -132,7 +131,7 @@ public class PostCircleActivity extends BaseActivity implements IPostCircleView 
      */
     @Override
     public void postSuccess() {
-        ProgressUtils.hideProgress();
+        E_TourismApplication.hideProgress();
         EventBus.getDefault().post(new PostCircleEvent());
         finish();
     }
@@ -143,7 +142,7 @@ public class PostCircleActivity extends BaseActivity implements IPostCircleView 
      */
     @Override
     public void postFailed(String msg) {
-        ProgressUtils.hideProgress();
-        ToastUtils.show(this, msg);
+        E_TourismApplication.hideProgress();
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }
 }

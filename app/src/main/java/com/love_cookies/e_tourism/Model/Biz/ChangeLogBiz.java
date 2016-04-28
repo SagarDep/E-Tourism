@@ -3,8 +3,8 @@ package com.love_cookies.e_tourism.Model.Biz;
 import android.content.Context;
 
 import com.google.gson.Gson;
-import com.love_cookies.cookie_library.Interface.CallBack;
 import com.love_cookies.e_tourism.Model.Bean.ChangeLogBean;
+import com.love_cookies.e_tourism.Model.Biz.Interface.CallBack;
 import com.love_cookies.e_tourism.Model.Biz.Interface.IChangeLogBiz;
 
 import java.io.IOException;

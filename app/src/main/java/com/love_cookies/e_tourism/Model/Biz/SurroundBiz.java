@@ -1,11 +1,11 @@
 package com.love_cookies.e_tourism.Model.Biz;
 
 import com.google.gson.Gson;
-import com.love_cookies.cookie_library.Interface.CallBack;
 import com.love_cookies.e_tourism.Config.AppConfig;
 import com.love_cookies.e_tourism.Model.Bean.LocationBean;
 import com.love_cookies.e_tourism.Model.Bean.SurroundBean;
 import com.love_cookies.e_tourism.Model.Bean.WeatherBean;
+import com.love_cookies.e_tourism.Model.Biz.Interface.CallBack;
 import com.love_cookies.e_tourism.Model.Biz.Interface.ISurroundBiz;
 
 import org.xutils.common.Callback;

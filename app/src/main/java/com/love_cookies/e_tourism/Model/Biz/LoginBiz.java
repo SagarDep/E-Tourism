@@ -1,8 +1,8 @@
 package com.love_cookies.e_tourism.Model.Biz;
 
-import com.love_cookies.cookie_library.Application.ActivityCollections;
-import com.love_cookies.cookie_library.Interface.CallBack;
+import com.love_cookies.e_tourism.ActivityCollections;
 import com.love_cookies.e_tourism.Model.Bean.UserBean;
+import com.love_cookies.e_tourism.Model.Biz.Interface.CallBack;
 import com.love_cookies.e_tourism.Model.Biz.Interface.ILoginBiz;
 
 import cn.bmob.v3.listener.SaveListener;

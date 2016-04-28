@@ -5,10 +5,9 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.love_cookies.cookie_library.Activity.BaseActivity;
-import com.love_cookies.cookie_library.Utils.ProgressUtils;
-import com.love_cookies.cookie_library.Utils.ToastUtils;
+import com.love_cookies.e_tourism.E_TourismApplication;
 import com.love_cookies.e_tourism.Presenter.LoginPresenter;
 import com.love_cookies.e_tourism.R;
 import com.love_cookies.e_tourism.View.Interface.ILoginView;
@@ -75,11 +74,11 @@ public class LoginActivity extends BaseActivity implements ILoginView {
         String username = usernameET.getText().toString();
         String password = passwordET.getText().toString();
         if (TextUtils.isEmpty(username)) {
-            ToastUtils.show(this, R.string.username_text_hint);
+            Toast.makeText(this, R.string.username_text_hint, Toast.LENGTH_SHORT).show();
         } else if (TextUtils.isEmpty(password)) {
-            ToastUtils.show(this, R.string.password_text_hint);
+            Toast.makeText(this, R.string.password_text_hint, Toast.LENGTH_SHORT).show();
         } else {
-            ProgressUtils.showProgress(this, R.string.wait_text);
+            E_TourismApplication.showProgress(this, R.string.wait_text);
             loginPresenter.doLogin(username, password);
         }
     }
@@ -89,7 +88,7 @@ public class LoginActivity extends BaseActivity implements ILoginView {
      */
     @Override
     public void turnToMain() {
-        ProgressUtils.hideProgress();
+        E_TourismApplication.hideProgress();
         turnThenFinish(MainActivity.class);
     }
 
@@ -99,8 +98,8 @@ public class LoginActivity extends BaseActivity implements ILoginView {
      */
     @Override
     public void loginFailed(String msg) {
-        ProgressUtils.hideProgress();
-        ToastUtils.show(this, msg);
+        E_TourismApplication.hideProgress();
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }
 
     /**
