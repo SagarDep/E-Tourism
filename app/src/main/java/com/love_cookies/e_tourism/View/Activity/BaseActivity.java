@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import com.love_cookies.e_tourism.ActivityCollections;
+import com.love_cookies.e_tourism.Collections;
 
 import org.xutils.x;
 
@@ -40,7 +40,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);// 竖屏锁定
-        ActivityCollections.getInstance().addActivity(this);
+        Collections.getInstance().addActivity(this);
         x.view().inject(this);
         initWidget(savedInstanceState);
     }
@@ -74,7 +74,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     protected void onDestroy() {
         super.onDestroy();
         EventBus.getDefault().unregister(this);
-        ActivityCollections.getInstance().finishActivity(this);
+        Collections.getInstance().finishActivity(this);
     }
 
     /**

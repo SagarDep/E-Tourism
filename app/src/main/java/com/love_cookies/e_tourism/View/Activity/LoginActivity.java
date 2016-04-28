@@ -7,7 +7,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.love_cookies.e_tourism.E_TourismApplication;
+import com.love_cookies.e_tourism.MyApplication;
 import com.love_cookies.e_tourism.Presenter.LoginPresenter;
 import com.love_cookies.e_tourism.R;
 import com.love_cookies.e_tourism.View.Interface.ILoginView;
@@ -78,7 +78,7 @@ public class LoginActivity extends BaseActivity implements ILoginView {
         } else if (TextUtils.isEmpty(password)) {
             Toast.makeText(this, R.string.password_text_hint, Toast.LENGTH_SHORT).show();
         } else {
-            E_TourismApplication.showProgress(this, R.string.wait_text);
+            MyApplication.showProgress(this, R.string.wait_text);
             loginPresenter.doLogin(username, password);
         }
     }
@@ -88,7 +88,7 @@ public class LoginActivity extends BaseActivity implements ILoginView {
      */
     @Override
     public void turnToMain() {
-        E_TourismApplication.hideProgress();
+        MyApplication.hideProgress();
         turnThenFinish(MainActivity.class);
     }
 
@@ -98,7 +98,7 @@ public class LoginActivity extends BaseActivity implements ILoginView {
      */
     @Override
     public void loginFailed(String msg) {
-        E_TourismApplication.hideProgress();
+        MyApplication.hideProgress();
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }
 

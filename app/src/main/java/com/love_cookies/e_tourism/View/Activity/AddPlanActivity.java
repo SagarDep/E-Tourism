@@ -10,7 +10,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.love_cookies.e_tourism.E_TourismApplication;
+import com.love_cookies.e_tourism.MyApplication;
 import com.love_cookies.e_tourism.Event.AddPlanEvent;
 import com.love_cookies.e_tourism.Presenter.AddPlanPresenter;
 import com.love_cookies.e_tourism.R;
@@ -97,7 +97,7 @@ public class AddPlanActivity extends BaseActivity implements IAddPlanView {
         if (TextUtils.isEmpty(content)) {
             Toast.makeText(this, R.string.content_hint, Toast.LENGTH_SHORT).show();
         } else {
-            E_TourismApplication.showProgress(this, R.string.wait_text);
+            MyApplication.showProgress(this, R.string.wait_text);
             addPlanPresenter.doAddPlan(type, content);
         }
     }
@@ -107,7 +107,7 @@ public class AddPlanActivity extends BaseActivity implements IAddPlanView {
      */
     @Override
     public void addSuccess() {
-        E_TourismApplication.hideProgress();
+        MyApplication.hideProgress();
         EventBus.getDefault().post(new AddPlanEvent());
         finish();
     }
@@ -118,7 +118,7 @@ public class AddPlanActivity extends BaseActivity implements IAddPlanView {
      */
     @Override
     public void addFailed(String msg) {
-        E_TourismApplication.hideProgress();
+        MyApplication.hideProgress();
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }
 }

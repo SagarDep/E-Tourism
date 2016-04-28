@@ -19,7 +19,7 @@ import cn.bmob.v3.Bmob;
  *
  * 应用Application
  */
-public class E_TourismApplication extends Application {
+public class MyApplication extends Application {
 
     public static final String DATABASE_NAME = "e_tourism.db";
     public static final String DATABASE_PATH = "/data/data/com.love_cookies.e_tourism/databases";

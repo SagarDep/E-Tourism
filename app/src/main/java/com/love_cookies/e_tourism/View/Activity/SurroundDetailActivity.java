@@ -7,7 +7,7 @@ import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.love_cookies.e_tourism.E_TourismApplication;
+import com.love_cookies.e_tourism.MyApplication;
 import com.love_cookies.e_tourism.R;
 
 import org.xutils.view.annotation.ContentView;
@@ -40,7 +40,7 @@ public class SurroundDetailActivity extends BaseActivity {
         WebSettings settings = webView.getSettings();
         settings.setJavaScriptEnabled(true);
         webView.setWebChromeClient(new WebChromeClient());
-        E_TourismApplication.showProgress(this, R.string.wait_text);
+        MyApplication.showProgress(this, R.string.wait_text);
         String url = "http://map.baidu.com/mobile/webapp/search/search/qt=inf&uid=" + getIntent().getExtras().getString("uid") + "/?third_party=uri_api";
         webView.loadUrl(url);
     }
@@ -67,7 +67,7 @@ public class SurroundDetailActivity extends BaseActivity {
         @Override
         public void onProgressChanged(WebView view, int newProgress) {
             if (newProgress == 100) {
-                E_TourismApplication.hideProgress();
+                MyApplication.hideProgress();
             }
             super.onProgressChanged(view, newProgress);
         }

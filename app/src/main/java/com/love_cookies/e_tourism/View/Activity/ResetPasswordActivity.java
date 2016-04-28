@@ -8,8 +8,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.love_cookies.e_tourism.ActivityCollections;
-import com.love_cookies.e_tourism.E_TourismApplication;
+import com.love_cookies.e_tourism.Collections;
+import com.love_cookies.e_tourism.MyApplication;
 import com.love_cookies.e_tourism.Presenter.ResetPasswordPresenter;
 import com.love_cookies.e_tourism.R;
 import com.love_cookies.e_tourism.View.Interface.IResetPasswordView;
@@ -80,7 +80,7 @@ public class ResetPasswordActivity extends BaseActivity implements IResetPasswor
         } else if(TextUtils.isEmpty(newPassword)) {
             Toast.makeText(this, R.string.new_password_text_hint, Toast.LENGTH_SHORT).show();
         } else {
-            E_TourismApplication.showProgress(this, R.string.wait_text);
+            MyApplication.showProgress(this, R.string.wait_text);
             resetPasswordPresenter.doResetPassword(oldPassword, newPassword);
         }
     }
@@ -91,7 +91,7 @@ public class ResetPasswordActivity extends BaseActivity implements IResetPasswor
      */
     @Override
     public void resetFailed(String msg) {
-        E_TourismApplication.hideProgress();
+        MyApplication.hideProgress();
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }
 
@@ -102,7 +102,7 @@ public class ResetPasswordActivity extends BaseActivity implements IResetPasswor
     public void turnToLogin() {
         Toast.makeText(this, R.string.reset_password_success_tip, Toast.LENGTH_SHORT).show();
         turn(LoginActivity.class);
-        ActivityCollections.getInstance().finishAllActivity();
+        Collections.getInstance().finishAllActivity();
     }
 
 }

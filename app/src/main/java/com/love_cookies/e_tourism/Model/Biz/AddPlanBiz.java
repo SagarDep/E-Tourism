@@ -1,6 +1,6 @@
 package com.love_cookies.e_tourism.Model.Biz;
 
-import com.love_cookies.e_tourism.ActivityCollections;
+import com.love_cookies.e_tourism.Collections;
 import com.love_cookies.e_tourism.Model.Bean.PlanBean;
 import com.love_cookies.e_tourism.Model.Bean.UserBean;
 import com.love_cookies.e_tourism.Model.Biz.Interface.CallBack;
@@ -24,12 +24,12 @@ public class AddPlanBiz implements IAddPlanBiz {
     @Override
     public void doAddPlan(String type, String content, final CallBack callBack) {
         PlanBean planBean = new PlanBean();
-        UserBean userBean = BmobUser.getCurrentUser(ActivityCollections.getInstance().currentActivity(), UserBean.class);
+        UserBean userBean = BmobUser.getCurrentUser(Collections.getInstance().currentActivity(), UserBean.class);
         planBean.setUsername(userBean.getUsername());
         planBean.setType(type);
         planBean.setTime(DateTimeUtil.getInstance().getCurrentTime());
         planBean.setContent(content);
-        planBean.save(ActivityCollections.getInstance().currentActivity(), new SaveListener() {
+        planBean.save(Collections.getInstance().currentActivity(), new SaveListener() {
             @Override
             public void onSuccess() {
                 callBack.onSuccess(0);

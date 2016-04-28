@@ -1,6 +1,6 @@
 package com.love_cookies.e_tourism.Model.Biz;
 
-import com.love_cookies.e_tourism.ActivityCollections;
+import com.love_cookies.e_tourism.Collections;
 import com.love_cookies.e_tourism.Model.Bean.CircleBean;
 import com.love_cookies.e_tourism.Model.Biz.Interface.CallBack;
 import com.love_cookies.e_tourism.Model.Biz.Interface.ICircleBiz;
@@ -26,7 +26,7 @@ public class CircleBiz implements ICircleBiz {
         BmobQuery<CircleBean> query = new BmobQuery<>();
         query.setLimit(10);
         query.setSkip(10 * offset);
-        query.findObjects(ActivityCollections.getInstance().currentActivity(), new FindListener<CircleBean>() {
+        query.findObjects(Collections.getInstance().currentActivity(), new FindListener<CircleBean>() {
             @Override
             public void onSuccess(List<CircleBean> list) {
                 callBack.onSuccess(list);

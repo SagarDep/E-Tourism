@@ -8,7 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.love_cookies.e_tourism.E_TourismApplication;
+import com.love_cookies.e_tourism.MyApplication;
 import com.love_cookies.e_tourism.Presenter.RegisterPresenter;
 import com.love_cookies.e_tourism.R;
 import com.love_cookies.e_tourism.View.Interface.IRegisterView;
@@ -84,7 +84,7 @@ public class RegisterActivity extends BaseActivity implements IRegisterView {
         } else if (TextUtils.isEmpty(nickname)) {
             Toast.makeText(this, R.string.nickname_text_hint, Toast.LENGTH_SHORT).show();
         } else {
-            E_TourismApplication.showProgress(this, R.string.wait_text);
+            MyApplication.showProgress(this, R.string.wait_text);
             registerPresenter.doRegister(username, password, nickname);
         }
     }
@@ -94,7 +94,7 @@ public class RegisterActivity extends BaseActivity implements IRegisterView {
      */
     @Override
     public void turnToLogin() {
-        E_TourismApplication.hideProgress();
+        MyApplication.hideProgress();
         Toast.makeText(this, R.string.register_success_text, Toast.LENGTH_SHORT).show();
         finish();
     }
@@ -105,7 +105,7 @@ public class RegisterActivity extends BaseActivity implements IRegisterView {
      */
     @Override
     public void registerFailed(String msg) {
-        E_TourismApplication.hideProgress();
+        MyApplication.hideProgress();
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }
 }

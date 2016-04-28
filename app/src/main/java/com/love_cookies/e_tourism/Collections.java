@@ -11,7 +11,7 @@ import java.util.Stack;
  *
  * Activity堆栈管理类
  */
-public class ActivityCollections {
+public class Collections {
 
 //    public static List<Activity> activities = new ArrayList<Activity>();
 //
@@ -32,17 +32,17 @@ public class ActivityCollections {
 //    }
 
     private static Stack<Activity> activityStack;
-    private static ActivityCollections instance;
+    private static Collections instance;
 
-    private ActivityCollections() {
+    private Collections() {
     }
 
     /**
      * 单实例 , UI无需考虑多线程同步问题
      */
-    public static ActivityCollections getInstance() {
+    public static Collections getInstance() {
         if (instance == null) {
-            instance = new ActivityCollections();
+            instance = new Collections();
         }
         return instance;
     }

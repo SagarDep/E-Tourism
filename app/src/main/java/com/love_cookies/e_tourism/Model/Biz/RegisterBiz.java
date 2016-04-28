@@ -1,6 +1,6 @@
 package com.love_cookies.e_tourism.Model.Biz;
 
-import com.love_cookies.e_tourism.ActivityCollections;
+import com.love_cookies.e_tourism.Collections;
 import com.love_cookies.e_tourism.Model.Bean.UserBean;
 import com.love_cookies.e_tourism.Model.Biz.Interface.CallBack;
 import com.love_cookies.e_tourism.Model.Biz.Interface.IRegisterBiz;
@@ -26,7 +26,7 @@ public class RegisterBiz implements IRegisterBiz {
         userBean.setUsername(username);
         userBean.setPassword(password);
         userBean.setNickname(nickname);
-        userBean.signUp(ActivityCollections.getInstance().currentActivity(), new SaveListener() {
+        userBean.signUp(Collections.getInstance().currentActivity(), new SaveListener() {
             @Override
             public void onSuccess() {
                 callBack.onSuccess(userBean);

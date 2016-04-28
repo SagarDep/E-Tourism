@@ -1,6 +1,6 @@
 package com.love_cookies.e_tourism.Presenter;
 
-import com.love_cookies.e_tourism.ActivityCollections;
+import com.love_cookies.e_tourism.Collections;
 import com.love_cookies.e_tourism.View.Interface.IResetPasswordView;
 
 import cn.bmob.v3.BmobUser;
@@ -25,11 +25,11 @@ public class ResetPasswordPresenter {
      * @param new_pwd
      */
     public void doResetPassword(String old_pwd, String new_pwd) {
-        BmobUser.updateCurrentUserPassword(ActivityCollections.getInstance().currentActivity(), old_pwd, new_pwd, new UpdateListener() {
+        BmobUser.updateCurrentUserPassword(Collections.getInstance().currentActivity(), old_pwd, new_pwd, new UpdateListener() {
             @Override
             public void onSuccess() {
-                BmobUser.logOut(ActivityCollections.getInstance().currentActivity());
-                BmobUser.getCurrentUser(ActivityCollections.getInstance().currentActivity());
+                BmobUser.logOut(Collections.getInstance().currentActivity());
+                BmobUser.getCurrentUser(Collections.getInstance().currentActivity());
                 iResetPasswordView.turnToLogin();
             }
 

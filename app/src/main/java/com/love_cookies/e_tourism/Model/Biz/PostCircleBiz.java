@@ -2,7 +2,7 @@ package com.love_cookies.e_tourism.Model.Biz;
 
 import android.content.Context;
 
-import com.love_cookies.e_tourism.ActivityCollections;
+import com.love_cookies.e_tourism.Collections;
 import com.love_cookies.e_tourism.Model.Bean.CircleBean;
 import com.love_cookies.e_tourism.Model.Bean.UserBean;
 import com.love_cookies.e_tourism.Model.Biz.Interface.CallBack;
@@ -30,7 +30,7 @@ public class PostCircleBiz implements IPostCircleBiz {
      */
     @Override
     public void doPost(final String content, String img, final CallBack callBack) {
-        final Context context = ActivityCollections.getInstance().currentActivity();
+        final Context context = Collections.getInstance().currentActivity();
         final BmobFile bmobFile = new BmobFile(new File(img));
         bmobFile.uploadblock(context, new UploadFileListener() {
             @Override

@@ -7,7 +7,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.love_cookies.e_tourism.ActivityCollections;
+import com.love_cookies.e_tourism.Collections;
 import com.love_cookies.e_tourism.Model.Bean.UserBean;
 import com.love_cookies.e_tourism.Presenter.MinePresenter;
 import com.love_cookies.e_tourism.R;
@@ -102,6 +102,6 @@ public class MineFragment extends BaseFragment implements IMineView {
     @Override
     public void turnToLogin() {
         turn(LoginActivity.class);
-        ActivityCollections.getInstance().finishAllActivity();
+        Collections.getInstance().finishAllActivity();
     }
 }

@@ -1,6 +1,6 @@
 package com.love_cookies.e_tourism.Presenter;
 
-import com.love_cookies.e_tourism.ActivityCollections;
+import com.love_cookies.e_tourism.Collections;
 import com.love_cookies.e_tourism.Model.Bean.UserBean;
 import com.love_cookies.e_tourism.View.Interface.IMineView;
 
@@ -23,7 +23,7 @@ public class MinePresenter {
      * 获取用户信息
      */
     public void getUserInfo() {
-        UserBean userBean = BmobUser.getCurrentUser(ActivityCollections.getInstance().currentActivity(), UserBean.class);//获取当前用户
+        UserBean userBean = BmobUser.getCurrentUser(Collections.getInstance().currentActivity(), UserBean.class);//获取当前用户
         iMineView.setUserInfo(userBean);
     }
 
@@ -31,8 +31,8 @@ public class MinePresenter {
      * 注销登录
      */
     public void doLogout() {
-        BmobUser.logOut(ActivityCollections.getInstance().currentActivity());//清除缓存用户对象
-        BmobUser.getCurrentUser(ActivityCollections.getInstance().currentActivity());//现在的currentUser是null了
+        BmobUser.logOut(Collections.getInstance().currentActivity());//清除缓存用户对象
+        BmobUser.getCurrentUser(Collections.getInstance().currentActivity());//现在的currentUser是null了
         iMineView.turnToLogin();
     }
 }

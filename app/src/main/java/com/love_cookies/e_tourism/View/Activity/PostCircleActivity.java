@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.love_cookies.e_tourism.E_TourismApplication;
+import com.love_cookies.e_tourism.MyApplication;
 import com.love_cookies.e_tourism.Event.PostCircleEvent;
 import com.love_cookies.e_tourism.Presenter.PostCirclePresenter;
 import com.love_cookies.e_tourism.R;
@@ -121,7 +121,7 @@ public class PostCircleActivity extends BaseActivity implements IPostCircleView 
         if (TextUtils.isEmpty(content)) {
             Toast.makeText(this, R.string.content_hint, Toast.LENGTH_SHORT).show();
         } else {
-            E_TourismApplication.showProgress(this, R.string.wait_text);
+            MyApplication.showProgress(this, R.string.wait_text);
             postCirclePresenter.doPost(content, imgPath);
         }
     }
@@ -131,7 +131,7 @@ public class PostCircleActivity extends BaseActivity implements IPostCircleView 
      */
     @Override
     public void postSuccess() {
-        E_TourismApplication.hideProgress();
+        MyApplication.hideProgress();
         EventBus.getDefault().post(new PostCircleEvent());
         finish();
     }
@@ -142,7 +142,7 @@ public class PostCircleActivity extends BaseActivity implements IPostCircleView 
      */
     @Override
     public void postFailed(String msg) {
-        E_TourismApplication.hideProgress();
+        MyApplication.hideProgress();
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }
 }

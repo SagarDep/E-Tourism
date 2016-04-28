@@ -1,6 +1,6 @@
 package com.love_cookies.e_tourism.Model.Biz;
 
-import com.love_cookies.e_tourism.ActivityCollections;
+import com.love_cookies.e_tourism.Collections;
 import com.love_cookies.e_tourism.Model.Bean.UserBean;
 import com.love_cookies.e_tourism.Model.Biz.Interface.CallBack;
 import com.love_cookies.e_tourism.Model.Biz.Interface.ILoginBiz;
@@ -24,7 +24,7 @@ public class LoginBiz implements ILoginBiz {
         final UserBean userBean = new UserBean();
         userBean.setUsername(username);
         userBean.setPassword(password);
-        userBean.login(ActivityCollections.getInstance().currentActivity(), new SaveListener() {
+        userBean.login(Collections.getInstance().currentActivity(), new SaveListener() {
             @Override
             public void onSuccess() {
                 callBack.onSuccess(userBean);

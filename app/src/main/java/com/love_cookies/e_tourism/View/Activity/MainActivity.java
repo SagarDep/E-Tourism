@@ -8,7 +8,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-import com.love_cookies.e_tourism.ActivityCollections;
+import com.love_cookies.e_tourism.Collections;
 import com.love_cookies.e_tourism.R;
 import com.love_cookies.e_tourism.View.Adapter.MainPageAdapter;
 import com.love_cookies.e_tourism.View.Fragment.CircleFragment;
@@ -87,7 +87,7 @@ public class MainActivity extends BaseActivity {
                 Toast.makeText(this, R.string.exit_tip, Toast.LENGTH_SHORT).show();
                 exitTime = System.currentTimeMillis();
             } else {
-                ActivityCollections.getInstance().finishAllActivity();
+                Collections.getInstance().finishAllActivity();
                 System.exit(0);
             }
             return true;
