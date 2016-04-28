@@ -31,21 +31,5 @@ dependencies {
     compile 'org.xutils:xutils:3.+'
     compile 'de.greenrobot:eventbus:2.+'
     compile 'com.google.code.gson:gson:2.+'
-
-    ////图片选择库相关
     compile project(':multiimageselector')
-    //图片选择库
-    compile 'com.squareup.okhttp:okhttp-urlconnection:1.+'
-    //*图片选择库需要
-    ////
-    //////Bmob-SDK相关
-    compile 'com.android.support:support-v4:23.2.1'
-    //用于兼容Android6.0系统，并提供权限管理工具
-    ////CDN文件服务使用okhttp相关包进行文件的上传和下载
-    compile 'com.squareup.okhttp:okhttp:2.+'
-    //okhttp *图片选择库也需要
-    compile 'com.squareup.okio:okio:1.+'
-    //okio
-    ////
-    //////
 }
