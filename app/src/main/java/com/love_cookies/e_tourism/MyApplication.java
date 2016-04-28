@@ -6,7 +6,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.love_cookies.e_tourism.Config.AppConfig;
 import com.love_cookies.e_tourism.Model.Bean.UserBean;
 import com.love_cookies.e_tourism.Utils.LocationUtil;
 
@@ -17,8 +16,6 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-
-import cn.bmob.v3.Bmob;
 
 /**
  * Created by xiekun on 2016/4/10.
@@ -46,7 +43,6 @@ public class MyApplication extends Application {
         getSPEditor();
         x.Ext.init(this);
         x.Ext.setDebug(true);
-        Bmob.initialize(this, AppConfig.APPID);
         LocationUtil.getInstance().getLocation(this);
     }
 
