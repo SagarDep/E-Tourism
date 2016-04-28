@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">旅行伴侣</string>
     <string name="app_intro">伴你快乐旅行</string>
-    <string name="app_right">love-cookies\nCopyright © 2016 XIEKUN .All Rights Reserved</string>
 
     <string name="exit_tip">再按一次退出</string>
 

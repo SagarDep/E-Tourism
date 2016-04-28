@@ -4,17 +4,17 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import com.love_cookies.e_tourism.R;
-import com.zhy.autolayout.AutoFrameLayout;
 
 /**
  * Created by xiekun on 2016/4/11 0011.
  *
  * 我页面里的条目
  */
-public class MineItemView extends AutoFrameLayout {
+public class MineItemView extends FrameLayout {
 
     private TextView itemTitle;
 

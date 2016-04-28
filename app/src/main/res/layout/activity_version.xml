@@ -1,4 +1,4 @@
-<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,10 +7,10 @@
 
     <include layout="@layout/view_title_bar" />
 
-    <com.zhy.autolayout.AutoLinearLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="30px"
+        android:padding="10dp"
         android:orientation="horizontal"
         android:gravity="center">
 
@@ -18,9 +18,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:padding="6px"
+            android:padding="2dp"
             android:textColor="@color/black"
-            android:textSize="54px"
+            android:textSize="18sp"
             android:text="@string/app_name"/>
 
         <TextView
@@ -28,16 +28,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:padding="6px"
+            android:padding="2dp"
             android:textColor="@color/theme_color"
-            android:textSize="54px"
+            android:textSize="18sp"
             tools:text="V 0.0"/>
 
-    </com.zhy.autolayout.AutoLinearLayout>
+    </LinearLayout>
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="1px"
+        android:layout_height="0.5dp"
         android:background="@color/lightgray" />
 
     <ListView
@@ -46,4 +46,4 @@
         android:layout_height="match_parent"
         android:divider="@null"/>
 
-</com.zhy.autolayout.AutoLinearLayout>
+</LinearLayout>

@@ -1,4 +1,4 @@
-<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:custom="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,14 +9,14 @@
     <include layout="@layout/view_title_bar" />
 
     <!-- 用户信息 -->
-    <com.zhy.autolayout.AutoRelativeLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="500px"
+        android:layout_height="165dp"
         android:background="@color/theme_color">
 
         <ImageView
-            android:layout_width="500px"
-            android:layout_height="500px"
+            android:layout_width="165dp"
+            android:layout_height="165dp"
             android:layout_centerHorizontal="true"
             android:scaleType="centerCrop"
             android:src="@drawable/user_head" />
@@ -28,21 +28,21 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:textColor="@color/theme_color"
-            android:padding="45px"
-            android:textSize="48px"
+            android:padding="15dp"
+            android:textSize="16sp"
             android:textStyle="bold"
             android:maxEms="7"
             android:singleLine="true"
             android:ellipsize="end"
             tools:text="Cookie" />
 
-    </com.zhy.autolayout.AutoRelativeLayout>
+    </RelativeLayout>
 
     <!-- 功能 -->
     <View
         android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:layout_marginTop="30px"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="10dp"
         android:background="@color/lightgray" />
 
     <com.love_cookies.e_tourism.View.Widget.MineItemView
@@ -61,14 +61,14 @@
         android:id="@+id/logout_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="100px"
-        android:layout_marginRight="100px"
-        android:layout_marginTop="200px"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginTop="65dp"
         android:background="@drawable/common_btn_bg"
         android:gravity="center"
-        android:padding="24px"
+        android:padding="8dp"
         android:text="@string/logout_btn_text"
         android:textColor="@color/white"
-        android:textSize="54px" />
+        android:textSize="18sp" />
 
-</com.zhy.autolayout.AutoLinearLayout>
+</LinearLayout>

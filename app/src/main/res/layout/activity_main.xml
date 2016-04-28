@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -13,16 +13,16 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="1px"
+        android:layout_height="0.5dp"
         android:background="@color/BLACK_A20" />
 
     <RadioGroup
         android:id="@+id/main_menu"
         android:layout_width="match_parent"
-        android:layout_height="160px"
+        android:layout_height="55dp"
         android:orientation="horizontal"
         android:gravity="center"
-        android:padding="15px">
+        android:padding="5dp">
 
         <RadioButton
             android:id="@+id/surround_btn"
@@ -33,7 +33,7 @@
             android:button="@null"
             android:text="@string/surround_text"
             android:textColor="@drawable/main_menu_bg"
-            android:textSize="36px"
+            android:textSize="12sp"
             android:drawableTop="@drawable/main_menu_surround_bg"/>
 
         <RadioButton
@@ -45,7 +45,7 @@
             android:button="@null"
             android:text="@string/plan_text"
             android:textColor="@drawable/main_menu_bg"
-            android:textSize="36px"
+            android:textSize="12sp"
             android:drawableTop="@drawable/main_menu_plan_bg"/>
 
         <RadioButton
@@ -57,7 +57,7 @@
             android:button="@null"
             android:text="@string/circle_text"
             android:textColor="@drawable/main_menu_bg"
-            android:textSize="36px"
+            android:textSize="12sp"
             android:drawableTop="@drawable/main_menu_circle_bg"/>
 
         <RadioButton
@@ -69,9 +69,9 @@
             android:button="@null"
             android:text="@string/mine_text"
             android:textColor="@drawable/main_menu_bg"
-            android:textSize="36px"
+            android:textSize="12sp"
             android:drawableTop="@drawable/main_menu_mine_bg"/>
 
     </RadioGroup>
 
-</com.zhy.autolayout.AutoLinearLayout>
+</LinearLayout>

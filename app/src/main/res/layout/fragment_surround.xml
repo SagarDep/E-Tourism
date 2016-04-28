@@ -1,4 +1,4 @@
-<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -18,15 +18,15 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <com.zhy.autolayout.AutoLinearLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
                 <!-- 天气 -->
-                <com.zhy.autolayout.AutoRelativeLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="500px"
+                    android:layout_height="165dp"
                     android:background="@color/theme_color">
 
                     <ImageView
@@ -41,9 +41,9 @@
                         android:id="@+id/city_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:padding="24px"
+                        android:padding="8dp"
                         android:textColor="@color/white"
-                        android:textSize="54px"
+                        android:textSize="18sp"
                         android:text="--" />
 
                     <TextView
@@ -51,10 +51,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:layout_marginRight="42px"
+                        android:layout_marginRight="14dp"
                         android:layout_toLeftOf="@id/weather_iv"
                         android:textColor="@color/white"
-                        android:textSize="120px"
+                        android:textSize="40dp"
                         android:textStyle="bold"
                         android:text="--℃" />
 
@@ -63,20 +63,20 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:layout_marginRight="42px"
+                        android:layout_marginRight="14dp"
                         android:layout_toLeftOf="@id/temperature_tv"
                         android:textColor="@color/white"
-                        android:textSize="120px"
+                        android:textSize="40dp"
                         android:textStyle="bold"
                         android:text="--" />
 
-                </com.zhy.autolayout.AutoRelativeLayout>
+                </RelativeLayout>
 
                 <!-- 周边选项 -->
                 <RadioGroup
                     android:id="@+id/surround_menu"
                     android:layout_width="match_parent"
-                    android:layout_height="120px"
+                    android:layout_height="40dp"
                     android:orientation="horizontal">
 
                     <RadioButton
@@ -87,7 +87,7 @@
                         android:gravity="center"
                         android:button="@null"
                         android:textColor="@drawable/main_menu_bg"
-                        android:textSize="36px"
+                        android:textSize="12sp"
                         android:text="@string/hotel_text"
                         android:background="@drawable/surround_menu_bg"/>
 
@@ -99,7 +99,7 @@
                         android:gravity="center"
                         android:button="@null"
                         android:textColor="@drawable/main_menu_bg"
-                        android:textSize="36px"
+                        android:textSize="12sp"
                         android:text="@string/mall_text"
                         android:background="@drawable/surround_menu_bg"/>
 
@@ -111,7 +111,7 @@
                         android:gravity="center"
                         android:button="@null"
                         android:textColor="@drawable/main_menu_bg"
-                        android:textSize="36px"
+                        android:textSize="12sp"
                         android:text="@string/food_text"
                         android:background="@drawable/surround_menu_bg"/>
 
@@ -123,7 +123,7 @@
                         android:gravity="center"
                         android:button="@null"
                         android:textColor="@drawable/main_menu_bg"
-                        android:textSize="36px"
+                        android:textSize="12sp"
                         android:text="@string/view_text"
                         android:background="@drawable/surround_menu_bg"/>
 
@@ -135,12 +135,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:divider="@color/theme_color"
-                    android:dividerHeight="1px"/>
+                    android:dividerHeight="0.5dp"/>
 
-            </com.zhy.autolayout.AutoLinearLayout>
+            </LinearLayout>
 
         </ScrollView>
 
     </com.love_cookies.cookie_library.Widget.LoadAndRefreshView>
 
-</com.zhy.autolayout.AutoLinearLayout>
+</LinearLayout>
