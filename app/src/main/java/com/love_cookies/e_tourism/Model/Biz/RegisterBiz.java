@@ -1,11 +1,13 @@
 package com.love_cookies.e_tourism.Model.Biz;
 
+import android.content.ContentValues;
+import android.database.Cursor;
+
 import com.love_cookies.e_tourism.Collections;
-import com.love_cookies.e_tourism.Model.Bean.UserBean;
 import com.love_cookies.e_tourism.Model.Biz.Interface.CallBack;
 import com.love_cookies.e_tourism.Model.Biz.Interface.IRegisterBiz;
-
-import cn.bmob.v3.listener.SaveListener;
+import com.love_cookies.e_tourism.MyApplication;
+import com.love_cookies.e_tourism.R;
 
 /**
  * Created by xiekun on 2016/4/4.
@@ -22,20 +24,22 @@ public class RegisterBiz implements IRegisterBiz {
      */
     @Override
     public void doRegister(String username, String password, String nickname, final CallBack callBack) {
-        final UserBean userBean = new UserBean();
-        userBean.setUsername(username);
-        userBean.setPassword(password);
-        userBean.setNickname(nickname);
-        userBean.signUp(Collections.getInstance().currentActivity(), new SaveListener() {
-            @Override
-            public void onSuccess() {
-                callBack.onSuccess(userBean);
+        try {
+            String sql = "SELECT * FROM user WHERE username = ?";
+            Cursor cursor = MyApplication.db.rawQuery(sql, new String[]{username});
+            if(cursor.moveToFirst()){
+                callBack.onFailed(Collections.getInstance().currentActivity().getResources().getString(R.string.re_account_exist));
+            } else {
+                ContentValues values = new ContentValues();
+                values.put("username", username);
+                values.put("password", password);
+                values.put("nickname", nickname);
+                MyApplication.db.insert("user", null, values);
+                callBack.onSuccess(0);
             }
-
-            @Override
-            public void onFailure(int i, String s) {
-                callBack.onFailed(s);
-            }
-        });
+            cursor.close();
+        } catch (Exception ex) {
+            callBack.onFailed(ex.getMessage());
+        }
     }
 }

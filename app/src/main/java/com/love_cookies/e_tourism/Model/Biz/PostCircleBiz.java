@@ -1,20 +1,11 @@
 package com.love_cookies.e_tourism.Model.Biz;
 
-import android.content.Context;
+import android.content.ContentValues;
 
-import com.love_cookies.e_tourism.Collections;
-import com.love_cookies.e_tourism.Model.Bean.CircleBean;
-import com.love_cookies.e_tourism.Model.Bean.UserBean;
 import com.love_cookies.e_tourism.Model.Biz.Interface.CallBack;
 import com.love_cookies.e_tourism.Model.Biz.Interface.IPostCircleBiz;
+import com.love_cookies.e_tourism.MyApplication;
 import com.love_cookies.e_tourism.Utils.DateTimeUtil;
-
-import java.io.File;
-
-import cn.bmob.v3.BmobUser;
-import cn.bmob.v3.datatype.BmobFile;
-import cn.bmob.v3.listener.SaveListener;
-import cn.bmob.v3.listener.UploadFileListener;
 
 /**
  * Created by xiekun on 2016/4/15 0015.
@@ -30,40 +21,17 @@ public class PostCircleBiz implements IPostCircleBiz {
      */
     @Override
     public void doPost(final String content, String img, final CallBack callBack) {
-        final Context context = Collections.getInstance().currentActivity();
-        final BmobFile bmobFile = new BmobFile(new File(img));
-        bmobFile.uploadblock(context, new UploadFileListener() {
-            @Override
-            public void onSuccess() {
-                CircleBean circleBean = new CircleBean();
-                UserBean userBean = BmobUser.getCurrentUser(context, UserBean.class);
-                circleBean.setUsername(userBean.getUsername());
-                circleBean.setNickname(userBean.getNickname());
-                circleBean.setTime(DateTimeUtil.getInstance().getCurrentTime());
-                circleBean.setContent(content);
-                circleBean.setImg(bmobFile.getFileUrl(context));
-                circleBean.save(context, new SaveListener() {
-                    @Override
-                    public void onSuccess() {
-                        callBack.onSuccess(0);
-                    }
-
-                    @Override
-                    public void onFailure(int i, String s) {
-                        callBack.onFailed(s);
-                    }
-                });
-            }
-
-            @Override
-            public void onProgress(Integer value) {
-
-            }
-
-            @Override
-            public void onFailure(int code, String s) {
-                callBack.onFailed(s);
-            }
-        });
+        try {
+            ContentValues values = new ContentValues();
+            values.put("user_id", MyApplication.user.getId());
+            values.put("nickname", MyApplication.user.getNickname());
+            values.put("time", DateTimeUtil.getInstance().getCurrentTime());
+            values.put("content", content);
+            values.put("img", img);
+            MyApplication.db.insert("circle", null, values);
+            callBack.onSuccess(0);
+        } catch (Exception ex) {
+            callBack.onFailed(ex.getMessage());
+        }
     }
 }

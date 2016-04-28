@@ -1,16 +1,14 @@
 package com.love_cookies.e_tourism.Model.Biz;
 
-import com.love_cookies.e_tourism.Collections;
+import android.database.Cursor;
+
 import com.love_cookies.e_tourism.Model.Bean.PlanBean;
-import com.love_cookies.e_tourism.Model.Bean.UserBean;
 import com.love_cookies.e_tourism.Model.Biz.Interface.CallBack;
 import com.love_cookies.e_tourism.Model.Biz.Interface.IPlanBiz;
+import com.love_cookies.e_tourism.MyApplication;
 
+import java.util.ArrayList;
 import java.util.List;
-
-import cn.bmob.v3.BmobQuery;
-import cn.bmob.v3.BmobUser;
-import cn.bmob.v3.listener.FindListener;
 
 /**
  * Created by xiekun on 2016/4/11 0011.
@@ -24,21 +22,24 @@ public class PlanBiz implements IPlanBiz {
      */
     @Override
     public void getPlan(int offset, final CallBack callBack) {
-        BmobQuery<PlanBean> query = new BmobQuery<>();
-        UserBean userBean = BmobUser.getCurrentUser(Collections.getInstance().currentActivity(), UserBean.class);
-        query.addWhereEqualTo("username", userBean.getUsername());
-        query.setLimit(10);
-        query.setSkip(10 * offset);
-        query.findObjects(Collections.getInstance().currentActivity(), new FindListener<PlanBean>() {
-            @Override
-            public void onSuccess(List<PlanBean> list) {
-                callBack.onSuccess(list);
+        try {
+            List<PlanBean> result = new ArrayList<>();
+            PlanBean planBean;
+            String sql = "SELECT * FROM plan ORDER BY time DESC LIMIT 10 OFFSET " + (offset * 10);
+            Cursor cursor = MyApplication.db.rawQuery(sql, null);
+            while (cursor.moveToNext()) {
+                planBean = new PlanBean();
+                planBean.setId(cursor.getInt(cursor.getColumnIndex("id")));
+                planBean.setUser_id(cursor.getInt(cursor.getColumnIndex("user_id")));
+                planBean.setType(cursor.getString(cursor.getColumnIndex("type")));
+                planBean.setTime(cursor.getString(cursor.getColumnIndex("time")));
+                planBean.setContent(cursor.getString(cursor.getColumnIndex("content")));
+                result.add(planBean);
             }
-
-            @Override
-            public void onError(int i, String s) {
-                callBack.onFailed(s);
-            }
-        });
+            cursor.close();
+            callBack.onSuccess(result);
+        } catch (Exception ex) {
+            callBack.onFailed(ex.getMessage());
+        }
     }
 }

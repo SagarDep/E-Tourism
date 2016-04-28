@@ -1,12 +1,10 @@
 package com.love_cookies.e_tourism.Presenter;
 
-import com.love_cookies.e_tourism.Collections;
 import com.love_cookies.e_tourism.Model.Bean.UserBean;
 import com.love_cookies.e_tourism.Model.Biz.Interface.CallBack;
 import com.love_cookies.e_tourism.Model.Biz.LoginBiz;
+import com.love_cookies.e_tourism.MyApplication;
 import com.love_cookies.e_tourism.View.Interface.ILoginView;
-
-import cn.bmob.v3.BmobUser;
 
 /**
  * Created by xiekun on 2016/4/4.
@@ -28,10 +26,14 @@ public class LoginPresenter {
      * @param username
      * @param password
      */
-    public void doLogin(String username, String password) {
+    public void doLogin(final String username, final String password) {
         loginBiz.doLogin(username, password, new CallBack() {
             @Override
             public void onSuccess(Object result) {
+                MyApplication.setUser((UserBean)result);
+                MyApplication.editor.putString("username", username);
+                MyApplication.editor.putString("password", password);
+                MyApplication.editor.commit();
                 iLoginView.turnToMain();
             }
 
@@ -40,16 +42,6 @@ public class LoginPresenter {
                 iLoginView.loginFailed((String)msg);
             }
         });
-    }
-
-    /**
-     * 自动登录
-     */
-    public void autoLogin() {
-        UserBean userBean = BmobUser.getCurrentUser(Collections.getInstance().currentActivity(), UserBean.class);
-        if(userBean != null) {
-            iLoginView.turnToMain();
-        }
     }
 
 }

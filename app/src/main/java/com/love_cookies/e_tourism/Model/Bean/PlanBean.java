@@ -1,17 +1,24 @@
 package com.love_cookies.e_tourism.Model.Bean;
 
-import cn.bmob.v3.BmobObject;
-
 /**
  * Created by xiekun on 2016/4/14 0014.
  *
  * 计划实体类
  */
-public class PlanBean extends BmobObject {
-    private String username;
+public class PlanBean {
+    private int id;
+    private int user_id;
     private String type;
     private String time;
     private String content;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getContent() {
         return content;
@@ -37,11 +44,11 @@ public class PlanBean extends BmobObject {
         this.type = type;
     }
 
-    public String getUsername() {
-        return username;
+    public int getUser_id() {
+        return user_id;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUser_id(int user_id) {
+        this.user_id = user_id;
     }
 }

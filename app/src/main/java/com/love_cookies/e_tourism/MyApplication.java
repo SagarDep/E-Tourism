@@ -12,6 +12,12 @@ import com.love_cookies.e_tourism.Utils.LocationUtil;
 
 import org.xutils.x;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+
 import cn.bmob.v3.Bmob;
 
 /**
@@ -48,28 +54,28 @@ public class MyApplication extends Application {
      * 获取数据库
      */
     public void getDB() {
-//        String databaseFilename = DATABASE_PATH + "/" + DATABASE_NAME;
-//        File dir = new File(DATABASE_PATH);
-//        if (!dir.exists())
-//            dir.mkdir();
-//        if (!(new File(databaseFilename)).exists()) {
-//            InputStream is = getResources().openRawResource(R.raw.e_office);
-//            try {
-//                FileOutputStream fos = new FileOutputStream(databaseFilename);
-//                byte[] buffer = new byte[8192];
-//                int count = 0;
-//                while ((count = is.read(buffer)) > 0) {
-//                    fos.write(buffer, 0, count);
-//                }
-//                fos.close();
-//                is.close();
-//            } catch (FileNotFoundException e) {
-//                e.printStackTrace();
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//        }
-//        db = SQLiteDatabase.openOrCreateDatabase(databaseFilename, null);
+        String databaseFilename = DATABASE_PATH + "/" + DATABASE_NAME;
+        File dir = new File(DATABASE_PATH);
+        if (!dir.exists())
+            dir.mkdir();
+        if (!(new File(databaseFilename)).exists()) {
+            InputStream is = getResources().openRawResource(R.raw.e_tourism);
+            try {
+                FileOutputStream fos = new FileOutputStream(databaseFilename);
+                byte[] buffer = new byte[8192];
+                int count = 0;
+                while ((count = is.read(buffer)) > 0) {
+                    fos.write(buffer, 0, count);
+                }
+                fos.close();
+                is.close();
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        db = SQLiteDatabase.openOrCreateDatabase(databaseFilename, null);
     }
 
     /**

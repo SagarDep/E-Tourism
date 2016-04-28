@@ -1,18 +1,25 @@
 package com.love_cookies.e_tourism.Model.Bean;
 
-import cn.bmob.v3.BmobObject;
-
 /**
  * Created by xiekun on 2016/4/15 0015.
  *
  * 动态圈实体类
  */
-public class CircleBean extends BmobObject {
-    private String username;
+public class CircleBean {
+    private int id;
+    private int user_id;
     private String nickname;
     private String time;
     private String content;
     private String img;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getContent() {
         return content;
@@ -46,11 +53,11 @@ public class CircleBean extends BmobObject {
         this.time = time;
     }
 
-    public String getUsername() {
-        return username;
+    public int getUser_id() {
+        return user_id;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUser_id(int user_id) {
+        this.user_id = user_id;
     }
 }

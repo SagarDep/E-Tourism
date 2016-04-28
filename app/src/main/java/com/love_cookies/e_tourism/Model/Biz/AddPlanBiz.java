@@ -1,14 +1,12 @@
 package com.love_cookies.e_tourism.Model.Biz;
 
-import com.love_cookies.e_tourism.Collections;
-import com.love_cookies.e_tourism.Model.Bean.PlanBean;
-import com.love_cookies.e_tourism.Model.Bean.UserBean;
+import android.content.ContentValues;
+
 import com.love_cookies.e_tourism.Model.Biz.Interface.CallBack;
 import com.love_cookies.e_tourism.Model.Biz.Interface.IAddPlanBiz;
+import com.love_cookies.e_tourism.MyApplication;
 import com.love_cookies.e_tourism.Utils.DateTimeUtil;
 
-import cn.bmob.v3.BmobUser;
-import cn.bmob.v3.listener.SaveListener;
 /**
  * Created by xiekun on 2016/4/14 0014.
  *
@@ -23,22 +21,16 @@ public class AddPlanBiz implements IAddPlanBiz {
      */
     @Override
     public void doAddPlan(String type, String content, final CallBack callBack) {
-        PlanBean planBean = new PlanBean();
-        UserBean userBean = BmobUser.getCurrentUser(Collections.getInstance().currentActivity(), UserBean.class);
-        planBean.setUsername(userBean.getUsername());
-        planBean.setType(type);
-        planBean.setTime(DateTimeUtil.getInstance().getCurrentTime());
-        planBean.setContent(content);
-        planBean.save(Collections.getInstance().currentActivity(), new SaveListener() {
-            @Override
-            public void onSuccess() {
-                callBack.onSuccess(0);
-            }
-
-            @Override
-            public void onFailure(int i, String s) {
-                callBack.onFailed(s);
-            }
-        });
+        try {
+            ContentValues values = new ContentValues();
+            values.put("user_id", MyApplication.user.getId());
+            values.put("type", type);
+            values.put("time", DateTimeUtil.getInstance().getCurrentTime());
+            values.put("content", content);
+            MyApplication.db.insert("plan", null, values);
+            callBack.onSuccess(0);
+        } catch (Exception ex) {
+            callBack.onFailed(ex.getMessage());
+        }
     }
 }
