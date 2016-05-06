@@ -57,42 +57,31 @@ public class LocationUtil {
         locationManager = (LocationManager) mContext.getSystemService(Context.LOCATION_SERVICE);
         List<String> providerList = locationManager.getProviders(true);
 
-        if (providerList.contains(LocationManager.GPS_PROVIDER)) {
-            provider = LocationManager.GPS_PROVIDER;
-        } else if (providerList.contains(LocationManager.NETWORK_PROVIDER)) {
+        //默认南京-仙鹤门
+        LocationBean locationBean = new LocationBean();
+        LocationBean.ResultEntity resultEntity = new LocationBean.ResultEntity();
+        LocationBean.ResultEntity.LocationEntity locationEntity = new LocationBean.ResultEntity.LocationEntity();
+        LocationBean.ResultEntity.AddressComponentEntity addressComponentEntity = new LocationBean.ResultEntity.AddressComponentEntity();
+        addressComponentEntity.setCity("南京");
+        locationEntity.setLat(32.088288);
+        locationEntity.setLng(118.893389);
+        resultEntity.setLocation(locationEntity);
+        resultEntity.setAddressComponent(addressComponentEntity);
+        locationBean.setResult(resultEntity);
+        this.locationBean = locationBean;
+
+        if (providerList.contains(LocationManager.NETWORK_PROVIDER)) {
             provider = LocationManager.NETWORK_PROVIDER;
+        } else if (providerList.contains(LocationManager.GPS_PROVIDER)) {
+            provider = LocationManager.GPS_PROVIDER;
         } else {
             Toast.makeText(context, R.string.no_provider_to_user, Toast.LENGTH_SHORT).show();
-            //默认南京-仙鹤门
-            LocationBean locationBean = new LocationBean();
-            LocationBean.ResultEntity resultEntity = new LocationBean.ResultEntity();
-            LocationBean.ResultEntity.LocationEntity locationEntity = new LocationBean.ResultEntity.LocationEntity();
-            LocationBean.ResultEntity.AddressComponentEntity addressComponentEntity = new LocationBean.ResultEntity.AddressComponentEntity();
-            addressComponentEntity.setCity("南京");
-            locationEntity.setLat(32.088288);
-            locationEntity.setLng(118.893389);
-            resultEntity.setLocation(locationEntity);
-            resultEntity.setAddressComponent(addressComponentEntity);
-            locationBean.setResult(resultEntity);
-            this.locationBean = locationBean;
             return;
         }
 
         if (ActivityCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
                 && ActivityCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             Toast.makeText(context, R.string.no_permissions_for_location, Toast.LENGTH_SHORT).show();
-            //默认南京-仙鹤门
-            LocationBean locationBean = new LocationBean();
-            LocationBean.ResultEntity resultEntity = new LocationBean.ResultEntity();
-            LocationBean.ResultEntity.LocationEntity locationEntity = new LocationBean.ResultEntity.LocationEntity();
-            LocationBean.ResultEntity.AddressComponentEntity addressComponentEntity = new LocationBean.ResultEntity.AddressComponentEntity();
-            addressComponentEntity.setCity("南京");
-            locationEntity.setLat(32.088288);
-            locationEntity.setLng(118.893389);
-            resultEntity.setLocation(locationEntity);
-            resultEntity.setAddressComponent(addressComponentEntity);
-            locationBean.setResult(resultEntity);
-            this.locationBean = locationBean;
             return;
         }
 
