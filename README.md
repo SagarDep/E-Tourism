@@ -1,6 +1,5 @@
 # E-Tourism
 ### 基于Android的旅途助手APP
-（仅仅是一个简单的毕业设计）
 
 ## TODO List
 * 用户登录注册模块
@@ -18,8 +17,17 @@
 	2. 发布朋友圈 √
 * 我的信息模块 -- 我
     1. 修改密码 √
-    2. 版本信息 √
-    3. 关于
 
-####PS
+#### PS
 临时罗列这些功能而已-_-
+
+### 截图
+![icon](http://ol3hmippr.bkt.clouddn.com/app_icon.png)
+
+![0](http://ol3hmippr.bkt.clouddn.com/tourism_00.png)
+![1](http://ol3hmippr.bkt.clouddn.com/tourism_01.png)
+
+![2](http://ol3hmippr.bkt.clouddn.com/tourism_02.png)
+![3](http://ol3hmippr.bkt.clouddn.com/tourism_03.png)
+
+![4](http://ol3hmippr.bkt.clouddn.com/tourism_00.png)
