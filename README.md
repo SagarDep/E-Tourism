@@ -30,4 +30,4 @@
 ![2](http://ol3hmippr.bkt.clouddn.com/tourism_02.png)
 ![3](http://ol3hmippr.bkt.clouddn.com/tourism_03.png)
 
-![4](http://ol3hmippr.bkt.clouddn.com/tourism_00.png)
+![4](http://ol3hmippr.bkt.clouddn.com/tourism_04.png)
